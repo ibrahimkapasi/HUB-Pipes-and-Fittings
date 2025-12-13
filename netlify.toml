@@ -1,0 +1,7 @@
+[build]
+  base = "New folder/website-creation (1)"
+  command = "npm run build"
+  publish = "New folder/website-creation (1)/.netlify/build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
