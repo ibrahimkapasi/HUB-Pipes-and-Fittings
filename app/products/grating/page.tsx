@@ -276,33 +276,33 @@ export default function GratingPage() {
               </div>
 
               <div className="mt-5">
-                <h3 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Hub Pipes & Fittings: Innovative Uses of Grating Trays in Industry</h3>
+                <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mt-16">Hub Pipes & Fittings: Innovative Uses of Grating Trays in Industry</h3>
                 <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {[
                     {
-                      title: "Chemical & Petrochemical Industry",
+                      title: "Chemical and Petrochemical",
                       image: "https://thumbs.dreamstime.com/b/oil-refinery-petrochemical-industry-plant-20674317.jpg",
-                      description: "Corrosion-resistant gratings designed for harsh chemical exposure and extreme temperatures, ensuring safety in refineries and petrochemical plants."
+                      description: "Corrosion-resistant gratings designed for harsh chemical exposure and extreme temperatures in refineries and processing plants."
                     },
                     {
-                      title: "Pharmaceutical & Food Processing",
+                      title: "Pharmaceutical and Food Processing",
                       image: "https://cleanroomtechnology.com/article-image-alias/pharmaceuticals-and-food-same-hygienic-principles.jpeg",
-                      description: "Hygienic, easy-to-clean stainless steel gratings meeting strict sanitary standards for pharmaceutical labs and food processing facilities."
+                      description: "Hygienic and easy-to-clean grating solutions meeting strict sanitary standards for food and pharma industries."
                     },
                     {
                       title: "Water Treatment Plants",
                       image: "https://www.kelvinindia.in/blog/wp-content/uploads/2024/09/industrial-waste-waer-treatment-plant.jpg",
-                      description: "Slip-resistant, durable gratings offering superior rust protection for walkways and platforms in high-moisture water treatment plants."
+                      description: "Durable and slip-resistant gratings ideal for walkways and platforms in water and wastewater treatment facilities."
                     },
                     {
-                      title: "Power & Energy Plants",
+                      title: "Power and Energy Plants",
                       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR008xESna0mM_k4oamJ8T3lWMXjZBAOEZ2lw&s",
                       description: "Heavy-duty gratings supporting massive loads and equipment, ensuring safe access in power generation and energy facilities."
                     },
                     {
-                      title: "Mining & Metallurgy",
+                      title: "Mining and Metallurgy",
                       image: "https://media.istockphoto.com/id/1070302804/photo/mining.jpg?s=612x612&w=0&k=20&c=p5HlP37aBh83z7Px7gRVoE-g9qMPge3kGqQIBZtOwtI=",
-                      description: "Rugged, high-strength gratings engineered to endure impact and vibration in demanding mining and metallurgical operations."
+                      description: "Rugged and high-strength gratings built to withstand abrasive environments and heavy loads in mining operations."
                     },
                     {
                       title: "Construction & Infrastructure",
@@ -314,15 +314,15 @@ export default function GratingPage() {
                       key={item.title}
                       className="group relative overflow-hidden rounded-lg p-6 ring-1 ring-border transition duration-300 hover:shadow-lg hover:-translate-y-0.5 hover:ring-primary/30 min-h-[260px] flex flex-col justify-center"
                     >
-                      <div className="absolute inset-0 z-0">
-                        <img 
-                          src={item.image} 
-                          alt={item.title} 
-                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-black/60 transition-colors duration-300 group-hover:bg-black/50" />
-                      </div>
+                      <div className="absolute inset-0 z-0 bg-black">
+                      <img 
+                        src={item.image} 
+                        alt={item.title} 
+                        className="h-full w-full object-cover opacity-50 transition-transform duration-500 group-hover:scale-110" 
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-black/50 transition-colors duration-300 group-hover:bg-black/40" />
+                    </div>
                       
                       <div className="relative z-10 flex flex-col gap-4">
                         <ImageIcon className="size-8 text-white/90 transition-transform duration-300 group-hover:scale-110" />
@@ -495,12 +495,13 @@ export default function GratingPage() {
                   </div>
                   <div className="p-4 flex flex-wrap gap-2">
                     {[
-                      "Oil & Gas",
-                      "Petrochemical",
+                      "Chemical industry",
+                      "Oil & Gas Industry",
+                      "Mechanical Industry",
+                      "Marine Industry",
                       "Power",
                       "Water Supply",
                       "Refining",
-                      "Process",
                       "Construction",
                     ].map((i) => (
                       <span key={i} className="rounded-full border px-3 py-1 text-xs text-muted-foreground">

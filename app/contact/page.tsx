@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import Link from "next/link"
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb"
 import { ArrowLeft, Mail, Phone, MapPin, Globe, Clock } from "lucide-react"
 import { useState } from "react"
 
@@ -52,21 +53,26 @@ export default function ContactPage() {
         <section className="relative py-0 text-white">
           <div className="absolute inset-0">
             <img src="/industrial-pipe-flanges.jpg" alt="Contact hero background" className="h-full w-full object-cover" />
-            <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/20" />
           </div>
-          <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <Button asChild variant="ghost" className="mb-8 text-white hover:bg-white/10 hover:text-white">
-              <Link href="/">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
-              </Link>
-            </Button>
-            <h1 data-animate className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">Contact Us</h1>
-            <p data-animate className="mt-6 max-w-3xl text-pretty text-xl leading-relaxed text-blue-100">
-              {
-                "Get in touch with our team for inquiries, quotes, or technical assistance. We're here to help with your industrial piping needs."
-              }
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 min-h-[320px] sm:min-h-[420px] lg:min-h-[440px] flex flex-col items-center justify-center text-center">
+            <h1 data-animate className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">Contact Us</h1>
+            <p data-animate className="mt-3 max-w-3xl text-pretty text-lg leading-relaxed text-blue-100">
+              Get in touch with our team for inquiries, quotes, or technical assistance. We're here to help with your industrial piping needs.
             </p>
+            <div className="mt-4 inline-flex px-3 py-2">
+              <Breadcrumb>
+                <BreadcrumbList className="justify-center text-white">
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage className="text-gray-400">Contact Us</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
           </div>
         </section>
 

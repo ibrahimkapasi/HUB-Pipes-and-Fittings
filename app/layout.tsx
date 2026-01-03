@@ -135,7 +135,7 @@ function FloatingActions() {
     <div className="fixed bottom-6 right-6 z-50">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <button aria-label="Open actions" className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50">
+          <button aria-label="Open actions" className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 animate-float">
             <MessageCircle className="h-5 w-5" />
           </button>
         </DropdownMenuTrigger>

@@ -1,29 +1,38 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import Link from "next/link"
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb"
 import { ArrowLeft, CheckCircle2, ShieldCheck, Target, Lightbulb, Eye } from "lucide-react"
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
-      <div className="pt-16">
+    <div className="min-h-screen relative">
+      <div className="pt-16 relative z-10">
         {/* Hero */}
         <section className="relative py-0 text-white">
           <div className="absolute inset-0">
             <img src="/steel-metal-plates-industrial.jpg" alt="About hero background" className="h-full w-full object-cover" />
-            <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/20" />
           </div>
-          <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <Button asChild variant="ghost" className="mb-8 text-white hover:bg-white/10 hover:text-white">
-              <Link href="/">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
-              </Link>
-            </Button>
-            <h1 data-animate className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">About Us</h1>
-            <p data-animate className="mt-6 max-w-3xl text-pretty text-xl leading-relaxed text-blue-100">
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 min-h-[320px] sm:min-h-[420px] lg:min-h-[440px] flex flex-col items-center justify-center text-center">
+            <h1 data-animate className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">About Us</h1>
+            <p data-animate className="mt-3 max-w-3xl text-pretty text-lg leading-relaxed text-blue-100">
               Two decades of engineering excellence as Manufacturing–Trader–Stockiest for industrial piping solutions.
             </p>
+            <div className="mt-4 inline-flex px-3 py-2">
+              <Breadcrumb>
+                <BreadcrumbList className="justify-center text-white">
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage className="text-gray-400">About Us</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
           </div>
         </section>
 
@@ -224,18 +233,25 @@ export default function AboutPage() {
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { name: "Oil & Gas", description: "Upstream, midstream, and downstream applications" },
-                { name: "Petrochemical", description: "Chemical processing and refinement facilities" },
-                { name: "Power Plants", description: "Thermal, nuclear, and renewable energy systems" },
-                { name: "Water Supply", description: "Municipal and industrial water distribution" },
-                { name: "Refining", description: "Petroleum refining and processing plants" },
-                { name: "Process Industries", description: "Manufacturing and industrial processing" },
-                { name: "Manufacturing", description: "General industrial and fabrication sectors" },
-                { name: "Construction", description: "Infrastructure and building projects" },
+                { name: "Chemical industry", description: "Chemical processing and refinement facilities", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/chemical-industry.jpg" },
+                { name: "Oil & Gas Industry", description: "Upstream, midstream, and downstream applications", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/oil-gas-industry.jpg" },
+                { name: "Mechanical Industry", description: "General industrial and fabrication sectors", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/mechanical-industry.jpg" },
+                { name: "Marine Industry", description: "Shipbuilding and offshore applications", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/marine-industry.jpg" },
               ].map((industry) => (
-                <Card data-animate="fade-up" key={industry.name} className="p-6 transition-shadow hover:shadow-lg">
-                  <h3 className="mb-2 font-semibold text-foreground">{industry.name}</h3>
-                  <p className="text-sm text-muted-foreground">{industry.description}</p>
+                <Card data-animate="fade-up" key={industry.name} className="group overflow-hidden border-2 bg-white p-0 shadow-sm hover:shadow-lg">
+                  <div className="relative aspect-video">
+                    <img
+                      src={industry.image}
+                      alt={industry.name}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/placeholder.jpg" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-80" />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="mb-2 font-semibold text-foreground">{industry.name}</h3>
+                    <p className="text-sm text-muted-foreground">{industry.description}</p>
+                  </div>
                 </Card>
               ))}
             </div>

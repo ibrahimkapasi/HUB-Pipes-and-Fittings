@@ -179,14 +179,10 @@ export default function HomePage() {
   ]
 
   const industries = [
-    { name: "Oil & Gas", image: "/industrial-steel-pipes-texture.jpg" },
-    { name: "Petrochemical", image: "/industrial-pipe-flanges.jpg" },
-    { name: "Power Plants", image: "/steel-metal-plates-industrial.jpg" },
-    { name: "Water Supply", image: "/placeholder.jpg" },
-    { name: "Refining", image: "/industrial-steel-pipes-texture.jpg" },
-    { name: "Process Industries", image: "/socket-weld-pipe-fittings.jpg" },
-    { name: "Manufacturing", image: "/steel-bars-industrial.jpg" },
-    { name: "Construction", image: "/placeholder.jpg" },
+    { name: "Chemical industry", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/chemical-industry.jpg" },
+    { name: "Oil & Gas Industry", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/oil-gas-industry.jpg" },
+    { name: "Mechanical Industry", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/mechanical-industry.jpg" },
+    { name: "Marine Industry", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/marine-industry.jpg" },
   ]
 
   const otherProducts = [
@@ -194,7 +190,7 @@ export default function HomePage() {
       name: "Stainless Steel Pipe Fitting Tee",
       category: "Pipes",
       description: "Strong, leak-resistant branching for high-pressure lines.",
-      image: "https://riddhisiddhimetal.com/buttweld-pipe-fittings-tee-manufacturer-india/index.php",
+      image: "https://res.cloudinary.com/rsc/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_auto,q_auto,w_700/c_pad,w_700/F4992981-01",
     },
     {
       name: "Stainless Steel Pipe Fitting Cross",
@@ -313,8 +309,8 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="min-h-screen">
-      <div className="pt-16">
+    <div className="min-h-screen relative">
+      <div className="pt-16 relative z-10">
         <section className="relative min-h-[90vh] overflow-hidden text-white">
           <Carousel setApi={setCarouselApi} opts={{ loop: true, duration: 45 }} plugins={fadePlugins as any} className="w-full">
             <CarouselContent className="min-h-[90vh]">
@@ -403,7 +399,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-muted/50 py-16 sm:py-20">
+        <section className="py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[

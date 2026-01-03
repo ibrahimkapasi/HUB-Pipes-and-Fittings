@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import Link from "next/link"
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb"
 import { ArrowLeft, Download, Info } from "lucide-react"
 
 export default function ProductsPage() {
@@ -16,7 +17,7 @@ export default function ProductsPage() {
       category: "Pipes",
       description:
         "Strong, leak-resistant branching for high-pressure lines. SS 304/304L and 316/316L grades across industrial sizes.",
-      image: "https://riddhisiddhimetal.com/buttweld-pipe-fittings-tee-manufacturer-india/index.php)",
+      image: "https://res.cloudinary.com/rsc/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_auto,q_auto,w_700/c_pad,w_700/F4992981-01",
     },
     {
       name: "Stainless Steel Pipe Fitting Cross",
@@ -382,20 +383,27 @@ export default function ProductsPage() {
         <section className="relative py-0 text-white">
           <div className="absolute inset-0">
             <img src="/industrial-steel-pipes-texture.jpg" alt="Products hero background" className="h-full w-full object-cover" />
-            <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/20" />
           </div>
-          <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-            <Button asChild variant="ghost" className="mb-8 text-white hover:bg-white/10 hover:text-white">
-              <Link href="/">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
-              </Link>
-            </Button>
-            <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl">Our Products</h1>
-            <p className="mt-6 max-w-3xl text-pretty text-xl leading-relaxed text-blue-100">
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 min-h-[320px] sm:min-h-[420px] lg:min-h-[440px] flex flex-col items-center justify-center text-center">
+            <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">Our Products</h1>
+            <p className="mt-3 max-w-3xl text-pretty text-lg leading-relaxed text-blue-100">
               Comprehensive range of high-quality industrial piping solutions designed to meet the demands of various
               industries. All products manufactured to international standards.
             </p>
+            <div className="mt-4 inline-flex px-3 py-2">
+              <Breadcrumb>
+                <BreadcrumbList className="justify-center text-white">
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage className="text-gray-400">Products</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
             <Button asChild size="lg" className="mt-8 bg-blue-600 hover:bg-blue-700">
               <a href="/catalogue.pdf" target="_blank" rel="noopener noreferrer" download>
                 <Download className="mr-2 h-5 w-5" />
@@ -582,7 +590,7 @@ export default function ProductsPage() {
         {/* Footer */}
         <footer className="border-t bg-slate-950 py-12 text-slate-400">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-4">
               <div>
                 <h3 className="mb-4 text-lg font-semibold text-white">HUB Pipe & Fitting</h3>
                 <p className="text-sm leading-relaxed">
@@ -604,6 +612,25 @@ export default function ProductsPage() {
                   <Link href="/contact" className="block hover:text-white">
                     Contact
                   </Link>
+                </div>
+              </div>
+              <div>
+                <h4 className="mb-4 text-sm font-semibold text-white">Products</h4>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  {[
+                    "Pipes",
+                    "Tubes",
+                    "Plates",
+                    "Flanges",
+                    "Buttweld Fittings",
+                    "Socket Weld Fittings",
+                    "Olets",
+                    "Bars",
+                  ].map((p) => (
+                    <Link key={p} href="/products" className="hover:text-white">
+                      {p}
+                    </Link>
+                  ))}
                 </div>
               </div>
               <div>
