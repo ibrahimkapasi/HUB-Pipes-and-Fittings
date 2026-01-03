@@ -6,7 +6,6 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "deploy": "npx netlify-cli deploy --prod",
     "start": "next start"
   },
   "dependencies": {
@@ -63,7 +62,6 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^5.15.1",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^19",
