@@ -179,10 +179,10 @@ export default function HomePage() {
   ]
 
   const industries = [
-    { name: "Chemical industry", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/chemical-industry.jpg" },
-    { name: "Oil & Gas Industry", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/oil-gas-industry.jpg" },
-    { name: "Mechanical Industry", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/mechanical-industry.jpg" },
-    { name: "Marine Industry", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/marine-industry.jpg" },
+    { name: "Chemical industry", image: "https://img.freepik.com/free-photo/pollution-industry-exterior-daylight_23-2149057680.jpg?semt=ais_hybrid&w=740&q=80" },
+    { name: "Oil & Gas Industry", image: "https://images.pexels.com/photos/15970032/pexels-photo-15970032.jpeg?cs=srgb&dl=pexels-jakub-pabis-147246622-15970032.jpg&fm=jpg" },
+    { name: "Mechanical Industry", image: "https://plus.unsplash.com/premium_photo-1664297997167-88170c57bc35?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVjaGFuaWNhbHxlbnwwfHwwfHx8MA%3D%3D" },
+    { name: "Marine Industry", image: "https://img.freepik.com/free-photo/cargo-ship-miami-harbor_649448-5019.jpg?semt=ais_hybrid&w=740&q=80" },
   ]
 
   const otherProducts = [
@@ -190,7 +190,7 @@ export default function HomePage() {
       name: "Stainless Steel Pipe Fitting Tee",
       category: "Pipes",
       description: "Strong, leak-resistant branching for high-pressure lines.",
-      image: "https://res.cloudinary.com/rsc/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_auto,q_auto,w_700/c_pad,w_700/F4992981-01",
+      image: "https://cpimg.tistatic.com/6516180/b/4/stainless-steel-pipe-fittings.jpg",
     },
     {
       name: "Stainless Steel Pipe Fitting Cross",
@@ -687,6 +687,8 @@ export default function HomePage() {
                                 src={industry.image}
                                 alt={industry.name}
                                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                referrerPolicy="no-referrer"
+                                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/placeholder.jpg" }}
                               />
                               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-80" />
                               <span className="absolute left-3 top-3 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-foreground">

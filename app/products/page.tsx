@@ -17,7 +17,7 @@ export default function ProductsPage() {
       category: "Pipes",
       description:
         "Strong, leak-resistant branching for high-pressure lines. SS 304/304L and 316/316L grades across industrial sizes.",
-      image: "https://res.cloudinary.com/rsc/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_auto,q_auto,w_700/c_pad,w_700/F4992981-01",
+      image: "https://cpimg.tistatic.com/6516180/b/4/stainless-steel-pipe-fittings.jpg",
     },
     {
       name: "Stainless Steel Pipe Fitting Cross",
@@ -436,11 +436,6 @@ export default function ProductsPage() {
                         alt={item.name}
                         loading="lazy"
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                        onError={(e) => {
-                          const t = e.currentTarget
-                          t.onerror = null
-                          t.src = "/placeholder.jpg"
-                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                       <div className="absolute left-3 top-3 rounded bg-white/80 px-3 py-1 text-xs font-medium text-foreground">

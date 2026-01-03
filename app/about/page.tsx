@@ -233,10 +233,10 @@ export default function AboutPage() {
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { name: "Chemical industry", description: "Chemical processing and refinement facilities", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/chemical-industry.jpg" },
-                { name: "Oil & Gas Industry", description: "Upstream, midstream, and downstream applications", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/oil-gas-industry.jpg" },
-                { name: "Mechanical Industry", description: "General industrial and fabrication sectors", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/mechanical-industry.jpg" },
-                { name: "Marine Industry", description: "Shipbuilding and offshore applications", image: "https://rajkrupametal.com/wp-content/uploads/2022/10/marine-industry.jpg" },
+                { name: "Chemical industry", description: "Chemical processing and refinement facilities", image: "https://img.freepik.com/free-photo/pollution-industry-exterior-daylight_23-2149057680.jpg?semt=ais_hybrid&w=740&q=80" },
+                { name: "Oil & Gas Industry", description: "Upstream, midstream, and downstream applications", image: "https://images.pexels.com/photos/15970032/pexels-photo-15970032.jpeg?cs=srgb&dl=pexels-jakub-pabis-147246622-15970032.jpg&fm=jpg" },
+                { name: "Mechanical Industry", description: "General industrial and fabrication sectors", image: "https://plus.unsplash.com/premium_photo-1664297997167-88170c57bc35?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVjaGFuaWNhbHxlbnwwfHwwfHx8MA%3D%3D" },
+                { name: "Marine Industry", description: "Shipbuilding and offshore applications", image: "https://img.freepik.com/free-photo/cargo-ship-miami-harbor_649448-5019.jpg?semt=ais_hybrid&w=740&q=80" },
               ].map((industry) => (
                 <Card data-animate="fade-up" key={industry.name} className="group overflow-hidden border-2 bg-white p-0 shadow-sm hover:shadow-lg">
                   <div className="relative aspect-video">
@@ -244,7 +244,6 @@ export default function AboutPage() {
                       src={industry.image}
                       alt={industry.name}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/placeholder.jpg" }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-80" />
                   </div>
