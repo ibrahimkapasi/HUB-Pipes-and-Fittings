@@ -310,10 +310,10 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen relative">
-      <div className="pt-28 relative z-10">
-        <section className="relative min-h-[90vh] overflow-hidden text-white">
+      <div className="pt-0 relative z-10">
+        <section className="relative min-h-[60vh] sm:min-h-[60vh] lg:min-h-[90vh] overflow-hidden text-white">
           <Carousel setApi={setCarouselApi} opts={{ loop: true, duration: 45 }} plugins={fadePlugins as any} className="w-full">
-            <CarouselContent className="min-h-[90vh]">
+            <CarouselContent className="min-h-[60vh] sm:min-h-[80vh] lg:min-h-[90vh]">
               {[
                 {
                   title: "Industrial Piping Solutions",
@@ -340,16 +340,16 @@ export default function HomePage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
                     <div className="relative flex h-full items-center justify-center">
-                      <div className="mx-auto max-w-7xl px-6 py-16 text-center sm:py-20 lg:py-24 h-[91vh] flex flex-col items-center justify-center mt-2">
-                        <h1 className={`text-balance text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl ${activeIndex === i ? "animate-in fade-in-0 slide-in-from-bottom-2 duration-700 delay-200" : ""
+                      <div className="mx-auto max-w-7xl px-6 py-12 text-center sm:py-20 lg:py-24 h-full flex flex-col items-center justify-center">
+                        <h1 className={`text-balance text-3xl font-bold tracking-tight sm:text-5xl lg:text-7xl ${activeIndex === i ? "animate-in fade-in-0 slide-in-from-bottom-2 duration-700 delay-200" : ""
                           }`}>
                           {slide.title}
                         </h1>
-                        <p className={`mt-6 text-pretty text-xl leading-relaxed text-blue-100 sm:text-2xl ${activeIndex === i ? "animate-in fade-in-0 slide-in-from-bottom-2 duration-700 delay-200" : ""
+                        <p className={`mt-4 sm:mt-6 text-pretty text-base sm:text-xl leading-relaxed text-blue-100 lg:text-2xl ${activeIndex === i ? "animate-in fade-in-0 slide-in-from-bottom-2 duration-700 delay-200" : ""
                           }`}>
                           {slide.subtitle}
                         </p>
-                        <div className={`mt-10 flex flex-wrap items-center justify-center gap-4 ${activeIndex === i ? "animate-in fade-in-0 slide-in-from-bottom-2 duration-700 delay-200" : ""
+                        <div className={`mt-6 sm:mt-10 flex flex-wrap items-center justify-center gap-4 ${activeIndex === i ? "animate-in fade-in-0 slide-in-from-bottom-2 duration-700 delay-200" : ""
                           }`}>
                           <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
                             <Link href="/contact">
@@ -375,15 +375,15 @@ export default function HomePage() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-6 top-1/2 z-20 -translate-y-1/2 size-10 rounded-full bg-white/70 text-black shadow hover:bg-white hover:text-black" />
-            <CarouselNext className="right-6 top-1/2 z-20 -translate-y-1/2 size-10 rounded-full bg-white/70 text-black shadow hover:bg-white hover:text-black" />
+            <CarouselPrevious className="left-2 sm:left-6 top-1/2 z-20 -translate-y-1/2 size-8 sm:size-10 rounded-full bg-white/70 text-black shadow hover:bg-white hover:text-black" />
+            <CarouselNext className="right-2 sm:right-6 top-1/2 z-20 -translate-y-1/2 size-8 sm:size-10 rounded-full bg-white/70 text-black shadow hover:bg-white hover:text-black" />
           </Carousel>
         </section>
         <div aria-hidden="true" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="my-6 border-t border-muted/50" />
+          <div className="my-4 border-t border-muted/50" />
         </div>
 
-        <section className="py-16 sm:py-8">
+        <section className="py-8 sm:py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h3 data-animate className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-4xl">
               HUB Pipes & Fittings — Industrial Pipes, Flanges, Plates & Fittings
@@ -399,7 +399,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20">
+        <section className="py-8 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -444,13 +444,10 @@ export default function HomePage() {
           </div>
         </section>
         <div aria-hidden="true" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="my-6 border-t border-muted/50" />
-        </div>
-        <div aria-hidden="true" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="my-6 border-t border-muted/50" />
+          <div className="my-4 border-t border-muted/50" />
         </div>
 
-        <section className="relative py-20 sm:py-24">
+        <section className="relative py-8 sm:py-24">
           <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-muted/30 to-transparent" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -513,15 +510,10 @@ export default function HomePage() {
           </div>
         </section>
         <div aria-hidden="true" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="my-6 border-t border-muted/50" />
-        </div>
-        <div aria-hidden="true" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="my-6 border-t border-muted/50" />
+          <div className="my-4 border-t border-muted/50" />
         </div>
 
-
-
-        <section className="py-16 sm:py-24">
+        <section className="py-8 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 data-animate className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Wide Range of Product Stock</h2>
@@ -575,11 +567,10 @@ export default function HomePage() {
           </div>
         </section>
         <div aria-hidden="true" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="my-6 border-t border-muted/50" />
+          <div className="my-4 border-t border-muted/50" />
         </div>
 
-
-        <section className="py-20 sm:py-24">
+        <section className="py-8 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
               <div>
@@ -614,10 +605,10 @@ export default function HomePage() {
           </div>
         </section>
         <div aria-hidden="true" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="my-6 border-t border-muted/50" />
+          <div className="my-4 border-t border-muted/50" />
         </div>
 
-        <section className="py-20 sm:py-24">
+        <section className="py-8 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 data-animate className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Our Other Products</h2>
@@ -654,10 +645,10 @@ export default function HomePage() {
         </section>
 
         <div aria-hidden="true" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="my-6 border-t border-muted/50" />
+          <div className="my-4 border-t border-muted/50" />
         </div>
 
-        <section className="py-20 sm:py-24">
+        <section className="py-8 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 data-animate className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
@@ -715,7 +706,7 @@ export default function HomePage() {
 
 
 
-        <section className="py-16 sm:py-24">
+        <section className="py-8 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 data-animate className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Global Presence</h2>
@@ -768,7 +759,7 @@ export default function HomePage() {
 
 
 
-        <section className="py-16">
+        <section className="py-8 sm:py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-6 text-center">
               <h3 data-animate className="text-xl font-semibold text-muted-foreground">Our Valuable Clients</h3>
@@ -811,7 +802,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="py-20 sm:py-24">
+        <section className="py-8 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 data-animate className="text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Why Choose Us</h2>
