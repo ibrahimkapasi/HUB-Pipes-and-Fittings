@@ -2,6 +2,14 @@ import type React from "react"
 import type { Metadata } from "next"
 import { ArrowUp, MessageCircle, Phone, Mail, Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
@@ -97,19 +105,81 @@ export default function RootLayout({
               <nav className="hidden items-center gap-6 md:flex">
                 <a href="/" className="text-sm font-medium text-muted-foreground hover:text-primary">Home</a>
                 <a href="/about" className="text-sm font-medium text-muted-foreground hover:text-primary">About</a>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <button className="text-sm font-medium text-muted-foreground hover:text-primary">Products</button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent sideOffset={8} align="start">
-                    <DropdownMenuItem asChild>
-                      <a href="/products" className="text-sm">All Products</a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <a href="/products/grating" className="text-sm">Grating</a>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                <NavigationMenu>
+                  <NavigationMenuList>
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger className="h-auto bg-transparent p-0 text-sm font-medium text-muted-foreground hover:bg-transparent hover:text-primary focus:bg-transparent focus:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent">
+                        Products
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent className="bg-white dark:bg-slate-950 border shadow-lg">
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <a
+                                href="/products/grating"
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 hover:text-slate-900 dark:hover:text-slate-100"
+                              >
+                                <div className="text-sm font-medium leading-none">Grating</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
+                                  High-quality grating solutions for industrial applications.
+                                </p>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                          <li className="row-span-3">
+                            <NavigationMenuLink asChild>
+                              <a
+                                href="/products?category=Pipes"
+                                className="flex h-full w-full select-none flex-col justify-start rounded-md bg-slate-50 dark:bg-slate-900 p-6 no-underline outline-none focus:shadow-md hover:bg-slate-100 dark:hover:bg-slate-800 focus:bg-slate-100 dark:focus:bg-slate-800 transition-colors"
+                              >
+                                <div className="mb-2 text-lg font-medium text-slate-900 dark:text-slate-100">
+                                  Pipes & Tubes
+                                </div>
+                                <p className="mb-4 text-sm leading-tight text-muted-foreground">
+                                  Stainless steel and carbon steel pipes.
+                                </p>
+                                <ul className="grid gap-2 text-sm text-slate-500 dark:text-slate-400">
+                                  <li>Stainless Steel Pipe Fitting Tee</li>
+                                  <li>Stainless Steel Pipe Fitting Cross</li>
+                                  <li>Stainless Steel Pipe Fitting Elbow</li>
+                                  <li>IBR Approved SS Pipe Fittings</li>
+                                  <li>Stainless Steel Tubes</li>
+                                  <li>Seamless & ERW Pipes</li>
+                                </ul>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <a
+                                href="/products?category=Flanges"
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 hover:text-slate-900 dark:hover:text-slate-100"
+                              >
+                                <div className="text-sm font-medium leading-none">Flanges</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
+                                  Slip-on, blind, and weld neck flanges.
+                                </p>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <a
+                                href="/products"
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 hover:text-slate-900 dark:hover:text-slate-100"
+                              >
+                                <div className="text-sm font-medium leading-none">View All</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
+                                  Browse our complete product catalog.
+                                </p>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
                 <a href="/contact" className="text-sm font-medium text-muted-foreground hover:text-primary">Contact</a>
               </nav>
               <a

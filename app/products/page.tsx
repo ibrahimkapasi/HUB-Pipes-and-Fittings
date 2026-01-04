@@ -1,5 +1,6 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect, Suspense } from "react"
+import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -8,8 +9,18 @@ import Link from "next/link"
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb"
 import { ArrowLeft, Download, Info } from "lucide-react"
 
-export default function ProductsPage() {
+function ProductsContent() {
+  const searchParams = useSearchParams()
+  const initialCategory = searchParams.get("category") || "All"
+  const [activeCategory, setActiveCategory] = useState(initialCategory)
   const categories = ["All", "Pipes", "Tubes", "Plates", "Flanges", "Fitting", "Round Bar", "Pipe Bends", "Olets"]
+
+  useEffect(() => {
+    const category = searchParams.get("category")
+    if (category && categories.includes(category)) {
+      setActiveCategory(category)
+    }
+  }, [searchParams])
   const sanitizeUrl = (url: string) => url?.replace(/\)+$/g, "")
   const rawProducts = [
     {
@@ -17,182 +28,182 @@ export default function ProductsPage() {
       category: "Pipes",
       description:
         "Strong, leak-resistant branching for high-pressure lines. SS 304/304L and 316/316L grades across industrial sizes.",
-      image: "https://cpimg.tistatic.com/6516180/b/4/stainless-steel-pipe-fittings.jpg",
+      image: "/products/stainless-steel-pipe-fitting-tee.jpg",
     },
     {
       name: "Stainless Steel Pipe Fitting Cross",
       category: "Pipes",
       description:
         "Four-way flow distribution engineered in 304/304L and 316/316L grades and supplied in all industrial sizes.",
-      image: "https://5.imimg.com/data5/NO/CQ/RM/SELLER-761146/cross-pipe-fitting.jpg)",
+      image: "/products/stainless-steel-pipe-fitting-cross.jpg",
     },
     {
       name: "Stainless Steel Pipe Fitting Elbow",
       category: "Pipes",
       description:
         "Efficient, reliable directional change unit with smooth flow and pressure control in corrosion‑resistant grades.",
-      image: "https://5.imimg.com/data5/SELLER/Default/2024/6/429994015/XP/PB/OZ/23289747/stainless-steel-pipe-fitting-elbow-500x500.jpg)",
+      image: "/products/stainless-steel-pipe-fitting-elbow.jpg",
     },
     {
       name: "IBR Approved Stainless Steel Pipe Fittings",
       category: "Pipes",
       description:
         "Machined using solid forgings. High‑quality IBR Approved Stainless Steel Pipe Fittings.",
-      image: "https://5.imimg.com/data5/SELLER/Default/2023/7/326304044/UX/MT/XZ/21573024/stainless-steel-ibr-pipe-fittings.jpg)",
+      image: "/products/ibr-approved-stainless-steel-pipe-fittings.jpg",
     },
     {
       name: "Inconel Plates",
       category: "Plates",
       description:
         "UNS N06625 high‑performance plates manufactured with cutting‑edge processes and premium raw materials.",
-      image: "https://5.imimg.com/data5/SELLER/Default/2024/2/392600502/VY/NL/GQ/2062242/inconel-plates-1000x1000.jpg)",
+      image: "/products/inconel-plates.jpg",
     },
     {
       name: "Hot & Cold Rolled Plates",
       category: "Plates",
       description:
         "Superior strength and versatility with finishes for structural, fabrication, and industrial applications.",
-      image: "https://5.imimg.com/data5/ZH/AG/GG/SELLER-94159982/stainless-steel-hot-rolled-plate-1000x1000.jpg)",
+      image: "/products/hot-cold-rolled-plates.jpg",
     },
     {
       name: "Super Duplex Steel UNS S32750 Plates",
       category: "Plates",
       description:
         "High‑strength, corrosion‑resistant plates recognized across demanding industrial applications.",
-      image: "https://stindia.com/img/nickel-alloy-sheet-supplier.jpg)",
+      image: "/steel-metal-plates-industrial.jpg",
     },
     {
       name: "Stainless Steel Plate",
       category: "Plates",
       description:
         "Very strong, corrosion‑resistant and versatile for construction, fabrication, and building industries.",
-      image: "https://omo-oss-image.thefastimg.com/portal-saas/pg2024053118270894084/cms/image/f9927636-81d8-4434-a9c1-6b4bb75d3b6b.jpg_560xaf.jpg)",
+      image: "/products/hot-cold-rolled-plates.jpg",
     },
     {
       name: "Stainless Steel Flange",
       category: "Flanges",
       description:
         "Safe, corrosion‑free connections for chemical, petrochemical, construction and industrial services.",
-      image: "https://www.viraj.com/wp-content/uploads/2018/05/blog.jpg)",
+      image: "/products/stainless-steel-flange.webp",
     },
     {
       name: "Slip On Flange",
       category: "Flanges",
       description:
         "Trusted slip‑on flanges designed for reliable performance across critical industries.",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs7niFJbCMm6OTYLpT6HSCLE4i5JPf2JLAwA&s)",
+      image: "/products/slip-on-flange.jpg",
     },
     {
       name: "Blind Flange",
       category: "Flanges",
       description:
         "Accurate sealing for pipeline ends; safe pressure containment across energy, marine, and industrial systems.",
-      image: "https://steelflangemfg.com/wp-content/uploads/2020/10/blind-flanges-manufacturer.jpg)",
+      image: "/products/blind-flange.jpg",
     },
     {
       name: "Weld Neck Flange",
       category: "Flanges",
       description:
         "Strong, high‑pressure connections with smooth flow transition ideal for demanding pipeline systems.",
-      image: "https://www.fittingservice.it/wp-content/uploads/2018/05/346.png?v=1721054899)",
+      image: "/products/weld-neck-flange.jpg",
     },
     {
       name: "Buttweld Fitting",
       category: "Fitting",
       description:
         "Clean, accurate pipe connections with superior structural strength across hygienic process pipelines.",
-      image: "https://nandigrammetal.com/images/buttweld-fitting/buttwelded-fitting-manufacturers-in-india.jpg)",
+      image: "/products/buttweld-fitting.jpg",
     },
     {
       name: "Buttweld Cross",
       category: "Fitting",
       description:
         "Seamlessly strong, reliable four‑way connections for fluid distribution networks.",
-      image: "https://www.micronsteel.com/wp-content/uploads/image/buttweld-equal-cross.jpg)",
+      image: "/products/buttweld-cross.jpg",
     },
     {
       name: "Buttweld End Caps",
       category: "Fitting",
       description:
         "Robust components to securely seal pipe ends, leak‑proof and pressure‑resistant.",
-      image: "https://petromatco.com/wp-content/uploads/image/buttweld/asme-b16-9-buttweld-end-cap.jpg)",
+      image: "/products/buttweld-end-caps.jpg",
     },
     {
       name: "Forged Fitting",
       category: "Fitting",
       description:
         "High‑grade, non‑leak pipe connections with high durability for pressure‑sensitive processes.",
-      image: "https://cpimg.tistatic.com/06354023/b/4/Ss-Forged-Fittings.jpg)",
+      image: "/products/forged-fitting.jpg",
     },
     {
       name: "Forged Elbow",
       category: "Fitting",
       description:
         "Directional flow transitions with high strength and pressure endurance for dependable operation.",
-      image: "https://dhanwantmetal.com/images/forged-fitting-manufacturers-in-india/forged-elbow/forged-elbow-90-deg-manufacturers-in-india.jpg)",
+      image: "/products/forged-90-degree-elbow.webp",
     },
     {
       name: "Forged Tee",
       category: "Fitting",
       description:
         "Superior branch connections in rigid high‑pressure piping systems for durable flow distribution.",
-      image: "https://5.imimg.com/data5/SELLER/Default/2024/3/402748354/TM/YN/TF/7690867/stainless-steel-forged-tee2-500x500.jpg)",
+      image: "/products/forged-tee.jpg",
     },
     {
       name: "Aluminum Bronze Round Bar",
       category: "Round Bar",
       description:
         "High tensile aluminum bronze rods suited for heavy‑duty mechanical and wear applications.",
-      image: "https://cpimg.tistatic.com/4014708/b/5/aluminium-bronze-rods.jpg",
+      image: "/products/aluminum-bronze-round-bar.jpg",
     },
     {
       name: "Manganese Bronze Round Bar",
       category: "Round Bar",
       description:
         "C67600 high tensile manganese bronze rod for robust industrial requirements.",
-      image: "https://2.wlimg.com/product_images/bc-full/2024/5/12802800/c67600-high-tensile-manganese-bronze-rod-1715602025-7425903.jpg",
+      image: "/products/manganese-bronze-round-bar.jpg",
     },
     {
-      name: "Aluminum Bronze Round Bar",
+      name: "Aluminum Bronze Round Bar (Alloy)",
       category: "Round Bar",
       description:
         "Copper–aluminum alloys (C95400, C95500, C95800) with high strength, wear and corrosion resistance. Used in marine components, pump parts, bushings, and heavy-duty industrial applications.",
-      image: "https://5.imimg.com/data5/OM/OQ/MY-15521074/aluminium-bronze-round-bar-500x500.jpg)",
+      image: "/products/aluminum-bronze-round-bar-alloy.jpg",
     },
     {
       name: "Phosphor Bronze Round Bar",
       category: "Round Bar",
       description:
         "Copper–tin–phosphorus alloys (PB1, PB2, PB102) offering excellent elasticity, fatigue resistance, and low friction. Ideal for bearings, electrical and spring components, and precision engineering parts.",
-      image: "https://www.samaterials.com/images/sc/1731042977-CM3599.jpg)",
+      image: "/products/phosphor-bronze-round-bar.jpg",
     },
     {
       name: "Lead Tin Bronze Round Bar",
       category: "Round Bar",
       description:
         "Lead–tin bronze (e.g., SAE 660) known for superior machinability and wear resistance. Commonly used for bushings, bearings, and heavy‑duty machine components.",
-      image: "https://5.imimg.com/data5/SELLER/Default/2023/6/319872132/KI/UV/OQ/57775261/bronze-round-bar.jpeg)",
+      image: "/products/lead-tin-bronze-round-bar.jpg",
     },
     {
       name: "Stainless Steel Round Bar",
       category: "Round Bar",
       description:
         "Grades 304, 316, and 410 providing high strength and corrosion resistance. Suitable for shafts, fasteners, and precision components.",
-      image: "https://lntsufin.com/storage/mediafiles/catalog/live/16592-1307/original/16592-1307_image_0.jpg)",
+      image: "/products/stainless-steel-round-bar.jpg",
     },
     {
       name: "Stainless Steel Tubes",
       category: "Tubes",
       description:
         "Grades 304, 316, and 321 delivering superior strength and corrosion resistance for structural work, heat exchangers, and fluid transport systems.",
-      image: "https://www.astmsteelpipes.com/uploaded_files/category_images/Stainless-Steel-Pipes-and-Tubes-manufacturers-in-mumbai-02_09_05.jpg)",
+      image: "/products/stainless-steel-tubes.jpg",
     },
     {
       name: "Pipe Bends",
       category: "Pipe Bends",
       description:
         "Available in SS 304/316 and CS ASTM A234 WPB; multiple radius options and custom sizes for smooth flow redirection in industrial piping systems.",
-      image: "https://5.imimg.com/data5/SELLER/Default/2021/10/CQ/OC/GE/89336736/ss-long-radius-bend.jpg)",
+      image: "/products/pipe-bends.jpg",
     },
     {
       name: "Olets",
@@ -206,18 +217,17 @@ export default function ProductsPage() {
       category: "Olets",
       description:
         "Manufactured using ASTM A105, A350 LF2, and A182 F11/F22 materials for strong, corrosion‑resistant branch connections in oil, gas, and high‑pressure industrial services.",
-      image: "https://www.marcelpiping.com/wp-content/uploads/2016/06/carbon-steel-olet-fittings.jpg)",
+      image: "/products/carbon-steel-olets.png",
     },
     {
       name: "Duplex Steel Olets",
       category: "Olets",
       description:
         "High tensile strength with excellent resistance to stress corrosion and erosion. Suited for seawater systems, desalination plants, and chemical processing lines.",
-      image: "https://5.imimg.com/data5/SELLER/Default/2023/8/331220929/KW/XD/UU/1913761/stainless-steel-and-duplex-steel-olets-500x500.jpg)",
+      image: "/products/duplex-steel-olets.jpg",
     },
   ]
   const catalog = rawProducts.map((p) => ({ ...p, image: sanitizeUrl(p.image) }))
-  const [activeCategory, setActiveCategory] = useState<string>("All")
   const filtered = activeCategory === "All" ? catalog : catalog.filter((p) => p.category === activeCategory)
   // const products = [
   //   {
@@ -649,5 +659,13 @@ export default function ProductsPage() {
         </footer>
       </div>
     </div>
+  )
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProductsContent />
+    </Suspense>
   )
 }

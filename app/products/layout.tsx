@@ -33,7 +33,7 @@ export default function ProductsLayout({
       <div 
         className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: 'url("https://static.vecteezy.com/system/resources/thumbnails/003/076/840/small/seamless-pattern-of-fasteners-bolts-screws-and-nuts-in-doodle-style-vector.jpg")',
+          backgroundImage: 'url("/seamless-pattern.jpg")',
           backgroundRepeat: 'repeat',
           backgroundSize: '300px'
         }}

@@ -48,7 +48,7 @@ export default function GratingPage() {
               </p>
               <div className="mt-8 w-full overflow-hidden rounded-xl">
                 <img
-                  src="https://gratingpacific.com/wp-content/uploads/2025/11/Welded-Steel-Grating-1024x683.jpg"
+                  src="/products/welded-steel-grating.jpg"
                   alt="Welded Steel Grating"
                   loading="lazy"
                   className="h-auto w-full object-cover"
@@ -166,7 +166,7 @@ export default function GratingPage() {
                   {[
                     {
                       title: "Electroforged Gratings",
-                      image: "https://www.chinasteelgrating.com/img/light-duty-stainless-steel-grating.jpg",
+                      image: "/products/grating/light-duty-ss.jpg",
                       paragraphs: [
                         "Electroforged​‍​‌‍​‍‌​‍​‌‍​‍‌ Gratings are made by using technically advanced, PLC-controlled equipment that not only applies very high hydraulic pressure but also a strong electrical current. These two things together weld the bearing bars and the cross bars to each other in one solid, integrated structure. What you get is a very tightly sealed joint with remarkable uniformity, where there are no fissures, weak spots, or open connections.",
                         "The strength of the bearing bar is kept the same during the electro-forging operation, while the twisted square cross bar provides excellent anti-slip property. This production method leads to higher trustworthiness, correct positioning, and almost zero-defect output, thus customers receive perfectly uniform grating panels every time.",
@@ -175,7 +175,7 @@ export default function GratingPage() {
                     },
                     {
                       title: "Stainless Steel Gratings",
-                      image: "https://cpimg.tistatic.com/7776324/b/4/stainless-steel-grating.jpg",
+                      image: "/products/grating/ss-grating.jpg",
                       paragraphs: [
                         "Stainless​‍​‌‍​‍‌​‍​‌‍​‍‌ Steel Gratings are essentially made for such industries that require high corrosion resistance, great durability over a long period of time, and a neat, attractive kind of appearance. With exact bar spacing and good stainless steel grades, they provide high strength and stability of the structure. Their sleek surface makes them perfect for hygienic and very wet kinds of areas.",
                         "These gratings are very resistant to the mentioned chemical, marine, and heavy load situations, thus they are capable of delivering good performance all the time. Every panel is made with precise dimensions, thereby providing uniformity and a very reliable slip resistance. Being of low maintenance and having excellent rust protection, they are the right choice for platforms, walkways, drainage systems, and industrial ​‍​‌‍​‍‌​‍​‌‍​‍‌flooring."
@@ -183,7 +183,7 @@ export default function GratingPage() {
                     },
                     {
                       title: "Welded / Custom Grating",
-                      image: "https://www.chinasteelgrating.com/img/stainless-steel-welded-steel-grating.jpg",
+                      image: "/products/grating/ss-welded-grating.jpg",
                       paragraphs: [
                         "Welded​‍​‌‍​‍‌​‍​‌‍​‍‌ and Custom Gratings are designed for projects that need specific sizes, different bar patterns, or special load capacities. In order to get the maximum strength, durability, and stability, each panel is produced with high-precision welding methods for the welds that are strong and reliable, thus making them the most suitable ones for complex layouts and tailored industrial applications.",
                         "There are practically no limitations for the range of bar sizes, the options for spacing, the materials, and the finishes that can be chosen so as to be able to achieve the exact configuration that is required. These gratings are the perfect ones to deliver reliable performance under heavy loads and in severe conditions, thus guaranteeing their long-term use.",
@@ -280,34 +280,34 @@ export default function GratingPage() {
                 <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {[
                     {
-                      title: "Chemical and Petrochemical",
-                      image: "https://thumbs.dreamstime.com/b/oil-refinery-petrochemical-industry-plant-20674317.jpg",
-                      description: "Corrosion-resistant gratings designed for harsh chemical exposure and extreme temperatures in refineries and processing plants."
+                      title: "Oil & Gas Refineries",
+                      description: "Used for walkways, platforms, and safety barriers in high-risk zones.",
+                      image: "/industries/oil-refinery.jpg",
                     },
                     {
-                      title: "Pharmaceutical and Food Processing",
-                      image: "https://cleanroomtechnology.com/article-image-alias/pharmaceuticals-and-food-same-hygienic-principles.jpeg",
-                      description: "Hygienic and easy-to-clean grating solutions meeting strict sanitary standards for food and pharma industries."
+                      title: "Power Plants",
+                      description: "Heavy-duty grating for turbine areas, boiler rooms, and cooling towers.",
+                      image: "/industries/construction.jpg",
                     },
                     {
-                      title: "Water Treatment Plants",
-                      image: "https://www.kelvinindia.in/blog/wp-content/uploads/2024/09/industrial-waste-waer-treatment-plant.jpg",
-                      description: "Durable and slip-resistant gratings ideal for walkways and platforms in water and wastewater treatment facilities."
+                      title: "Chemical & Fertilizer",
+                      description: "Corrosion-resistant stainless steel grating for aggressive environments.",
+                      image: "/industries/chemical-industry.jpg",
                     },
                     {
-                      title: "Power and Energy Plants",
-                      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR008xESna0mM_k4oamJ8T3lWMXjZBAOEZ2lw&s",
-                      description: "Heavy-duty gratings supporting massive loads and equipment, ensuring safe access in power generation and energy facilities."
+                      title: "Pharmaceuticals & Food",
+                      description: "Hygienic stainless steel gratings for cleanroom and processing areas.",
+                      image: "/industries/pharma-food.jpg",
                     },
                     {
-                      title: "Mining and Metallurgy",
-                      image: "https://media.istockphoto.com/id/1070302804/photo/mining.jpg?s=612x612&w=0&k=20&c=p5HlP37aBh83z7Px7gRVoE-g9qMPge3kGqQIBZtOwtI=",
-                      description: "Rugged and high-strength gratings built to withstand abrasive environments and heavy loads in mining operations."
+                      title: "Water Treatment",
+                      description: "Slip-resistant and durable grating for wet and humid conditions.",
+                      image: "/industries/waste-water.jpg",
                     },
                     {
-                      title: "Construction & Infrastructure",
-                      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST_QbzdaQPAhedkmmIw1xkksgr9UqF6L6m6w&s",
-                      description: "Versatile structural gratings for bridges and infrastructure, combining aesthetic appeal with robust load-bearing performance."
+                      title: "Mining & Offshore",
+                      description: "High-strength grating capable of withstanding extreme loads and weather.",
+                      image: "/industries/mining.jpg",
                     },
                   ].map((item) => (
                     <Card

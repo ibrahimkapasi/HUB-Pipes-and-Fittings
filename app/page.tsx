@@ -179,10 +179,10 @@ export default function HomePage() {
   ]
 
   const industries = [
-    { name: "Chemical industry", image: "https://img.freepik.com/free-photo/pollution-industry-exterior-daylight_23-2149057680.jpg?semt=ais_hybrid&w=740&q=80" },
-    { name: "Oil & Gas Industry", image: "https://images.pexels.com/photos/15970032/pexels-photo-15970032.jpeg?cs=srgb&dl=pexels-jakub-pabis-147246622-15970032.jpg&fm=jpg" },
-    { name: "Mechanical Industry", image: "https://plus.unsplash.com/premium_photo-1664297997167-88170c57bc35?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVjaGFuaWNhbHxlbnwwfHwwfHx8MA%3D%3D" },
-    { name: "Marine Industry", image: "https://img.freepik.com/free-photo/cargo-ship-miami-harbor_649448-5019.jpg?semt=ais_hybrid&w=740&q=80" },
+    { name: "Chemical industry", image: "/industries/chemical-industry.jpg" },
+    { name: "Oil & Gas Industry", image: "/industries/oil-and-gas.jpg" },
+    { name: "Mechanical Industry", image: "/industries/mechanical.jpg" },
+    { name: "Marine Industry", image: "/industries/marine.jpg" },
   ]
 
   const otherProducts = [
@@ -190,121 +190,121 @@ export default function HomePage() {
       name: "Stainless Steel Pipe Fitting Tee",
       category: "Pipes",
       description: "Strong, leak-resistant branching for high-pressure lines.",
-      image: "https://cpimg.tistatic.com/6516180/b/4/stainless-steel-pipe-fittings.jpg",
+      image: "/products/ss-pipe-fitting-tee.jpg",
     },
     {
       name: "Stainless Steel Pipe Fitting Cross",
       category: "Pipes",
       description: "Four-way flow distribution engineered in 304/304L and 316/316L grades.",
-      image: "https://5.imimg.com/data5/NO/CQ/RM/SELLER-761146/cross-pipe-fitting.jpg",
+      image: "/products/cross-pipe-fitting.jpg",
     },
     {
       name: "Stainless Steel Pipe Fitting Elbow",
       category: "Pipes",
       description: "Efficient, reliable directional change unit with smooth flow.",
-      image: "https://5.imimg.com/data5/SELLER/Default/2024/6/429994015/XP/PB/OZ/23289747/stainless-steel-pipe-fitting-elbow-500x500.jpg",
+      image: "/products/stainless-steel-pipe-fitting-elbow.jpg",
     },
     {
       name: "IBR Approved SS Pipe Fittings",
       category: "Pipes",
       description: "Machined using solid forgings. High‑quality IBR Approved.",
-      image: "https://5.imimg.com/data5/SELLER/Default/2023/7/326304044/UX/MT/XZ/21573024/stainless-steel-ibr-pipe-fittings.jpg",
+      image: "/products/ss-ibr-fittings.jpg",
     },
     {
       name: "Inconel Plates",
       category: "Plates",
       description: "UNS N06625 high‑performance plates manufactured with cutting‑edge processes.",
-      image: "https://5.imimg.com/data5/SELLER/Default/2024/2/392600502/VY/NL/GQ/2062242/inconel-plates-1000x1000.jpg",
+      image: "/products/inconel-plates.jpg",
     },
     {
       name: "Hot & Cold Rolled Plates",
       category: "Plates",
       description: "Superior strength and versatility with finishes for structural applications.",
-      image: "https://5.imimg.com/data5/ZH/AG/GG/SELLER-94159982/stainless-steel-hot-rolled-plate-1000x1000.jpg",
+      image: "/products/ss-hot-rolled-plate.jpg",
     },
     {
       name: "Super Duplex Steel Plates",
       category: "Plates",
       description: "High‑strength, corrosion‑resistant plates for demanding applications.",
-      image: "https://stindia.com/img/nickel-alloy-sheet-supplier.jpg",
+      image: "/products/nickel-alloy-sheet.jpg",
     },
     {
       name: "Stainless Steel Plate",
       category: "Plates",
       description: "Very strong, corrosion‑resistant and versatile for construction.",
-      image: "https://omo-oss-image.thefastimg.com/portal-saas/pg2024053118270894084/cms/image/f9927636-81d8-4434-a9c1-6b4bb75d3b6b.jpg_560xaf.jpg",
+      image: "/products/hot-cold-rolled-plates.jpg",
     },
     {
       name: "Stainless Steel Flange",
       category: "Flanges",
       description: "Safe, corrosion‑free connections for chemical and petrochemical services.",
-      image: "https://www.viraj.com/wp-content/uploads/2018/05/blog.jpg",
+      image: "/products/ss-flange.jpg",
     },
     {
       name: "Slip On Flange",
       category: "Flanges",
       description: "Trusted slip‑on flanges designed for reliable performance.",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs7niFJbCMm6OTYLpT6HSCLE4i5JPf2JLAwA&s",
+      image: "/products/slip-on-flange.jpg",
     },
     {
       name: "Blind Flange",
       category: "Flanges",
       description: "Accurate sealing for pipeline ends; safe pressure containment.",
-      image: "https://steelflangemfg.com/wp-content/uploads/2020/10/blind-flanges-manufacturer.jpg",
+      image: "/products/blind-flange.jpg",
     },
     {
       name: "Weld Neck Flange",
       category: "Flanges",
       description: "Strong, high‑pressure connections with smooth flow transition.",
-      image: "https://www.fittingservice.it/wp-content/uploads/2018/05/346.png?v=1721054899",
+      image: "/products/weld-neck-flange.jpg",
     },
     {
       name: "Buttweld Fitting",
       category: "Fitting",
       description: "Clean, accurate pipe connections with superior structural strength.",
-      image: "https://nandigrammetal.com/images/buttweld-fitting/buttwelded-fitting-manufacturers-in-india.jpg",
+      image: "/products/buttweld-fitting.jpg",
     },
     {
       name: "Buttweld Cross",
       category: "Fitting",
       description: "Seamlessly strong, reliable four‑way connections.",
-      image: "https://www.micronsteel.com/wp-content/uploads/image/buttweld-equal-cross.jpg",
+      image: "/products/buttweld-cross.jpg",
     },
     {
       name: "Buttweld End Caps",
       category: "Fitting",
       description: "Robust components to securely seal pipe ends.",
-      image: "https://petromatco.com/wp-content/uploads/image/buttweld/asme-b16-9-buttweld-end-cap.jpg",
+      image: "/products/buttweld-end-cap.jpg",
     },
     {
       name: "Forged Fitting",
       category: "Fitting",
       description: "High‑grade, non‑leak pipe connections with high durability.",
-      image: "https://cpimg.tistatic.com/06354023/b/4/Ss-Forged-Fittings.jpg",
+      image: "/products/forged-fitting.jpg",
     },
     {
       name: "Forged Elbow",
       category: "Fitting",
       description: "Directional flow transitions with high strength.",
-      image: "https://dhanwantmetal.com/images/forged-fitting-manufacturers-in-india/forged-elbow/forged-elbow-90-deg-manufacturers-in-india.jpg",
+      image: "/products/forged-90-degree-elbow.webp",
     },
     {
       name: "Forged Tee",
       category: "Fitting",
       description: "Superior branch connections in rigid high‑pressure piping systems.",
-      image: "https://5.imimg.com/data5/SELLER/Default/2024/3/402748354/TM/YN/TF/7690867/stainless-steel-forged-tee2-500x500.jpg",
+      image: "/products/forged-tee.jpg",
     },
     {
       name: "Aluminum Bronze Round Bar",
       category: "Round Bar",
       description: "High tensile aluminum bronze rods suited for heavy‑duty applications.",
-      image: "https://cpimg.tistatic.com/4014708/b/5/aluminium-bronze-rods.jpg",
+      image: "/products/aluminum-bronze-rods.jpg",
     },
     {
       name: "Manganese Bronze Round Bar",
       category: "Round Bar",
       description: "C67600 high tensile manganese bronze rod for robust requirements.",
-      image: "https://2.wlimg.com/product_images/bc-full/2024/5/12802800/c67600-high-tensile-manganese-bronze-rod-1715602025-7425903.jpg",
+      image: "/products/manganese-bronze-rod.jpg",
     },
   ]
 
@@ -431,7 +431,7 @@ export default function HomePage() {
                 <Card
                   data-animate="fade-up"
                   key={f.title}
-                  className="group rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                  className="group rounded-2xl border border-primary/20 bg-card p-8 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary/30 bg-primary/10 text-primary ">
                     <f.icon className="h-8 w-8" />
@@ -499,12 +499,12 @@ export default function HomePage() {
                 </Button>
               </div>
 
-              <Card className="overflow-hidden border-2 p-0 shadow-sm">
-                <div className="relative h-64 sm:h-80 lg:h-[28rem]">
+              <Card className="h-full overflow-hidden border-2 p-0 shadow-sm">
+                <div className="relative h-64 sm:h-80 lg:h-full lg:min-h-[28rem]">
                   <img
-                    src="https://wallpapers.com/images/hd/hd-engineering-industrial-pipes-dieiu2lmx32sa9ni.jpg"
-                    alt="Industrial facility"
-                    className="h-[750px] w-full object-cover"
+                    src="/hero-bg-pipes.jpg"
+                    alt="20+ Years Excellence"
+                    className="h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 </div>
@@ -721,13 +721,13 @@ export default function HomePage() {
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 ">
               {[
-                { name: "Mumbai", image: "https://images.pexels.com/photos/3893788/pexels-photo-3893788.jpeg?cs=srgb&dl=pexels-illuseenator-3893788.jpg&fm=jpg" },
+                { name: "Mumbai", image: "/locations/mumbai.jpg" },
 
-                { name: "Gujarat", image: "https://images.pexels.com/photos/2409361/pexels-photo-2409361.jpeg?cs=srgb&dl=pexels-mukund-patel-1264723-2409361.jpg&fm=jpg" },
+                { name: "Gujarat", image: "/locations/gujarat.jpg" },
 
-                { name: "Hyderabad", image: "https://i.pinimg.com/736x/6f/65/be/6f65be65df7d422493344a00b97ad6cb.jpg" },
+                { name: "Hyderabad", image: "/locations/hyderabad.jpg" },
 
-                { name: "Bengaluru", image: "https://images.pexels.com/photos/17443349/pexels-photo-17443349.jpeg?cs=srgb&dl=pexels-raks-1713783-17443349.jpg&fm=jpg" },
+                { name: "Bengaluru", image: "/locations/bengaluru.jpg" },
 
               ].map((city) => (
                 <Card key={city.name} className="overflow-hidden border-2 bg-white !p-0 !gap-0 shadow-sm hover:shadow-lg">
@@ -774,28 +774,35 @@ export default function HomePage() {
             <div className="marquee border-y py-6">
               <div className="marquee-inner flex items-center gap-12">
                 {[
-                  "https://dummyimage.com/120x40/ddd/000&text=Acme+Corp",
-                  "https://dummyimage.com/120x40/ddd/000&text=Globex",
-                  "https://dummyimage.com/120x40/ddd/000&text=Initech",
-                  "https://dummyimage.com/120x40/ddd/000&text=Umbrella",
-                  "https://dummyimage.com/120x40/ddd/000&text=Wayne+Enterprises",
-                  "https://dummyimage.com/120x40/ddd/000&text=Stark+Industries",
-                  "https://dummyimage.com/120x40/ddd/000&text=Soylent",
-                  "https://dummyimage.com/120x40/ddd/000&text=Hooli",
-                  "https://dummyimage.com/120x40/ddd/000&text=Massive+Dynamic",
-                  "https://dummyimage.com/120x40/ddd/000&text=Wonka",
-                  "https://dummyimage.com/120x40/ddd/000&text=Tyrell",
-                  "https://dummyimage.com/120x40/ddd/000&text=Octan",
-                  "https://dummyimage.com/120x40/ddd/000&text=Cyberdyne",
-                  "https://dummyimage.com/120x40/ddd/000&text=Vandelay",
-                  "https://dummyimage.com/120x40/ddd/000&text=Blue+Sun",
-                  "https://dummyimage.com/120x40/ddd/000&text=Duff",
-                  "https://dummyimage.com/120x40/ddd/000&text=MomCorp",
-                  "https://dummyimage.com/120x40/ddd/000&text=Nakatomi",
-                  "https://dummyimage.com/120x40/ddd/000&text=Prestige",
-                  "https://dummyimage.com/120x40/ddd/000&text=Dunder+Mifflin",
+                  "/companies/1708694507983.jpg",
+                  "/companies/Kalyani-Logo-Bharat-Forge-Logo.jpg",
+                  "/companies/LOGOMAIL4.png",
+                  "/companies/labindia_logo.jpg",
+                  "/companies/lt-construction.jpg",
+                  "/companies/1708694507983.jpg",
+                  "/companies/Kalyani-Logo-Bharat-Forge-Logo.jpg",
+                  "/companies/LOGOMAIL4.png",
+                  "/companies/labindia_logo.jpg",
+                  "/companies/lt-construction.jpg",
+                  "/companies/1708694507983.jpg",
+                  "/companies/Kalyani-Logo-Bharat-Forge-Logo.jpg",
+                  "/companies/LOGOMAIL4.png",
+                  "/companies/labindia_logo.jpg",
+                  "/companies/lt-construction.jpg",
+                  "/companies/1708694507983.jpg",
+                  "/companies/Kalyani-Logo-Bharat-Forge-Logo.jpg",
+                  "/companies/LOGOMAIL4.png",
+                  "/companies/labindia_logo.jpg",
+                  "/companies/lt-construction.jpg",
                 ].map((src, i) => (
-                  <img data-animate="fade-up" key={`logo-${i}`} src={src} alt="Client Logo" className="h-10 w-auto opacity-80" />
+                  <div key={`logo-${i}`} className="relative h-24 w-48 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+                    <img 
+                      data-animate="fade-up" 
+                      src={src} 
+                      alt="Client Logo" 
+                      className="max-h-20 max-w-[160px] object-contain mix-blend-multiply" 
+                    />
+                  </div>
                 ))}
               </div>
             </div>
