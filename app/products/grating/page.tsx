@@ -10,13 +10,13 @@ import { ImageIcon, Info, ArrowRight, Phone, MapPin, Star, Download, ShieldCheck
 export default function GratingPage() {
   return (
     <div className="min-h-screen">
-      <div className="pt-16">
+      <div>
         <section className="relative py-0 text-white">
           <div className="absolute inset-0">
             <img src="/Grating image.png" alt="Grating banner" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/20" />
           </div>
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 min-h-[320px] sm:min-h-[420px] lg:min-h-[440px] flex flex-col items-center justify-center text-center">
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 min-h-[320px] sm:min-h-[420px] lg:min-h-[440px] flex flex-col items-center justify-center text-center pt-12 pb-8">
             <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">Grating Trays</h1>
             <p className="mt-3 max-w-3xl text-pretty text-lg leading-relaxed text-blue-100">Manufacturer & Exporter in India</p>
             <div className="mt-4 inline-flex px-3 py-2">

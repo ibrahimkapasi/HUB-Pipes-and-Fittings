@@ -48,14 +48,14 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="pt-16">
+      <div>
         {/* Hero */}
         <section className="relative py-0 text-white">
           <div className="absolute inset-0">
             <img src="/industrial-pipe-flanges.jpg" alt="Contact hero background" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/20" />
           </div>
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 min-h-[320px] sm:min-h-[420px] lg:min-h-[440px] flex flex-col items-center justify-center text-center">
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 min-h-[320px] sm:min-h-[420px] lg:min-h-[440px] flex flex-col items-center justify-center text-center pt-12 pb-8">
             <h1 data-animate className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">Contact Us</h1>
             <p data-animate className="mt-3 max-w-3xl text-pretty text-lg leading-relaxed text-blue-100">
               Get in touch with our team for inquiries, quotes, or technical assistance. We're here to help with your industrial piping needs.

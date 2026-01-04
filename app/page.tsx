@@ -310,7 +310,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen relative">
-      <div className="pt-16 relative z-10">
+      <div className="pt-28 relative z-10">
         <section className="relative min-h-[90vh] overflow-hidden text-white">
           <Carousel setApi={setCarouselApi} opts={{ loop: true, duration: 45 }} plugins={fadePlugins as any} className="w-full">
             <CarouselContent className="min-h-[90vh]">
@@ -705,8 +705,10 @@ export default function HomePage() {
                   )
                 })}
               </CarouselContent>
-              <CarouselPrevious className="left-6 top-1/2 z-20 -translate-y-1/2 size-10 rounded-full bg-white/70 text-black shadow hover:bg-white hover:text-black" />
-              <CarouselNext className="right-6 top-1/2 z-20 -translate-y-1/2 size-10 rounded-full bg-white/70 text-black shadow hover:bg-white hover:text-black" />
+              <div className="hidden md:block">
+                <CarouselPrevious className="left-6 top-1/2 z-20 -translate-y-1/2 size-10 rounded-full bg-white/70 text-black shadow hover:bg-white hover:text-black" />
+                <CarouselNext className="right-6 top-1/2 z-20 -translate-y-1/2 size-10 rounded-full bg-white/70 text-black shadow hover:bg-white hover:text-black" />
+              </div>
             </Carousel>
           </div>
         </section>

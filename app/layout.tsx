@@ -72,6 +72,8 @@ export const metadata: Metadata = {
   },
 }
 
+import { MobileNav } from "@/components/MobileNav"
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -98,10 +100,13 @@ export default function RootLayout({
           </div>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
-              <a href="/" className="flex items-center gap-3 text-xl font-bold text-foreground">
-                <img src="/icon.svg" alt="HUB" className="h-6 w-6" />
-                HUB Pipes & Fitting
-              </a>
+              <div className="flex items-center gap-4">
+                <MobileNav />
+                <a href="/" className="flex items-center gap-3 text-xl font-bold text-foreground">
+                  <img src="/icon.svg" alt="HUB" className="h-6 w-6" />
+                  HUB Pipes & Fitting
+                </a>
+              </div>
               <nav className="hidden items-center gap-6 md:flex">
                 <a href="/" className="text-sm font-medium text-muted-foreground hover:text-primary">Home</a>
                 <a href="/about" className="text-sm font-medium text-muted-foreground hover:text-primary">About</a>
@@ -192,7 +197,9 @@ export default function RootLayout({
           </div>
         </header>
         <ScrollReveal />
-        {children}
+        <main className="pt-25 min-h-screen">
+          {children}
+        </main>
         <FloatingActions />
         <Analytics />
       </body>
