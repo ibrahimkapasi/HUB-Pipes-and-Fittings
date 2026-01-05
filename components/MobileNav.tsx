@@ -32,7 +32,7 @@ export function MobileNav() {
       <SheetContent side="left" className="w-[300px] sm:w-[400px] overflow-y-auto p-6">
         <SheetHeader>
           <SheetTitle className="text-left flex items-center gap-2">
-            <img src="/icon.svg" alt="HUB" className="h-6 w-6" />
+            <img src="/logo/logo.png" alt="HUB" className="h-8 w-8 rounded-full object-cover" />
             HUB Pipes & Fitting
           </SheetTitle>
         </SheetHeader>

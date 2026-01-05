@@ -597,9 +597,12 @@ export default function GratingPage() {
 
         <footer className="border-t bg-slate-950 py-12 text-slate-400">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-4">
               <div>
-                <h3 className="mb-4 text-lg font-semibold text-white">HUB Pipe & Fitting</h3>
+                <div className="mb-4 flex items-center gap-2">
+                  <img src="/logo/logo.png" alt="HUB" className="h-10 w-10 rounded-full object-cover" />
+                  <h3 className="text-lg font-semibold text-white">HUB Pipe & Fitting</h3>
+                </div>
                 <p className="text-sm leading-relaxed">
                   Leading manufacturer, trader, and stockiest of industrial piping solutions since 2004.
                 </p>

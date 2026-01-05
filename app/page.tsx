@@ -311,9 +311,9 @@ export default function HomePage() {
   return (
     <div className="min-h-screen relative">
       <div className="pt-0 relative z-10">
-        <section className="relative min-h-[60vh] sm:min-h-[60vh] lg:min-h-[90vh] overflow-hidden text-white">
-          <Carousel setApi={setCarouselApi} opts={{ loop: true, duration: 45 }} plugins={fadePlugins as any} className="w-full">
-            <CarouselContent className="min-h-[60vh] sm:min-h-[80vh] lg:min-h-[90vh]">
+        <section className="relative min-h-[60vh] sm:min-h-[60vh] md:h-screen overflow-hidden text-white">
+          <Carousel setApi={setCarouselApi} opts={{ loop: true, duration: 45 }} plugins={fadePlugins as any} className="w-full h-full">
+            <CarouselContent className="min-h-[60vh] sm:min-h-[80vh] md:h-screen">
               {[
                 {
                   title: "Industrial Piping Solutions",
@@ -843,7 +843,10 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 md:grid-cols-4">
               <div>
-                <h3 className="mb-4 text-lg font-semibold text-white">HUB Pipe & Fitting</h3>
+                <div className="mb-4 flex items-center gap-2">
+                  <img src="/logo/logo.png" alt="HUB" className="h-10 w-10 rounded-full object-cover" />
+                  <h3 className="text-lg font-semibold text-white">HUB Pipe & Fitting</h3>
+                </div>
                 <p className="text-sm leading-relaxed">
                   Hub‍‌‍‍‌‍‌‍‍‌ Pipes & Fittings is a leading Plates, Buttweld Fittings, and Round Bar manufacturer and supplier in India. We are a metal products wholesaler of premium grades, and a complete range of metals is readily available in large quantities in major cities like Gujarat, Maharashtra, and ‍‌‍‍‌‍‌‍‍‌Rajasthan.
                 </p>

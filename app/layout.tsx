@@ -56,19 +56,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/logo/favicon.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/logo/favicon.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/logo/favicon.png",
+        type: "image/png",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/logo/favicon.png",
   },
 }
 
@@ -103,7 +103,7 @@ export default function RootLayout({
               <div className="flex items-center gap-4">
                 <MobileNav />
                 <a href="/" className="flex items-center gap-3 text-xl font-bold text-foreground">
-                  <img src="/icon.svg" alt="HUB" className="h-6 w-6" />
+                  <img src="/logo/logo.png" alt="HUB" className="hidden md:block h-15 w-15 rounded-full object-cover" />
                   HUB Pipes & Fitting
                 </a>
               </div>

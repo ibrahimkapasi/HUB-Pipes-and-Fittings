@@ -314,7 +314,10 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 md:grid-cols-4">
               <div>
-                <h3 className="mb-4 text-lg font-semibold text-white">HUB Pipe & Fitting</h3>
+                <div className="mb-4 flex items-center gap-2">
+                  <img src="/logo/logo.png" alt="HUB" className="h-10 w-10 rounded-full object-cover" />
+                  <h3 className="text-lg font-semibold text-white">HUB Pipe & Fitting</h3>
+                </div>
                 <p className="text-sm leading-relaxed">
                   Hub‍‌‍‍‌‍‌‍‍‌ Pipes & Fittings is a leading Plates, Buttweld Fittings, and Round Bar manufacturer and supplier in India. We are a metal products wholesaler of premium grades, and a complete range of metals is readily available in large quantities in major cities like Gujarat, Maharashtra, and ‍‌‍‍‌‍‌‍‍‌Rajasthan.
                 </p>
