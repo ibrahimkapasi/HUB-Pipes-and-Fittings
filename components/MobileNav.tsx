@@ -80,6 +80,13 @@ export function MobileNav() {
                   Flanges
                 </Link>
                 <Link
+                  href="/products/cable-wires"
+                  onClick={() => setOpen(false)}
+                  className="text-base text-muted-foreground hover:text-primary"
+                >
+                  Cable Wires
+                </Link>
+                <Link
                   href="/products"
                   onClick={() => setOpen(false)}
                   className="text-base text-muted-foreground hover:text-primary"

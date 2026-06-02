@@ -113,11 +113,11 @@ export default function RootLayout({
                 <NavigationMenu>
                   <NavigationMenuList>
                     <NavigationMenuItem>
-                      <NavigationMenuTrigger className="h-auto bg-transparent p-0 text-sm font-medium text-muted-foreground hover:bg-transparent hover:text-primary focus:bg-transparent focus:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent">
+                      <NavigationMenuTrigger className="h-auto !bg-transparent p-0 text-sm font-medium text-muted-foreground hover:!bg-transparent hover:text-primary focus:!bg-transparent focus:text-primary data-[active]:!bg-transparent data-[state=open]:!bg-transparent data-[state=open]:text-primary data-[state=open]:hover:!bg-transparent data-[state=open]:hover:text-primary data-[state=open]:focus:!bg-transparent data-[state=open]:focus:text-primary">
                         Products
                       </NavigationMenuTrigger>
                       <NavigationMenuContent className="bg-white dark:bg-slate-950 border shadow-lg">
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        <ul className="grid w-[320px] gap-2 p-4">
                           <li>
                             <NavigationMenuLink asChild>
                               <a
@@ -131,29 +131,6 @@ export default function RootLayout({
                               </a>
                             </NavigationMenuLink>
                           </li>
-                          <li className="row-span-3">
-                            <NavigationMenuLink asChild>
-                              <a
-                                href="/products?category=Pipes"
-                                className="flex h-full w-full select-none flex-col justify-start rounded-md bg-slate-50 dark:bg-slate-900 p-6 no-underline outline-none focus:shadow-md hover:bg-slate-100 dark:hover:bg-slate-800 focus:bg-slate-100 dark:focus:bg-slate-800 transition-colors"
-                              >
-                                <div className="mb-2 text-lg font-medium text-slate-900 dark:text-slate-100">
-                                  Pipes & Tubes
-                                </div>
-                                <p className="mb-4 text-sm leading-tight text-muted-foreground">
-                                  Stainless steel and carbon steel pipes.
-                                </p>
-                                <ul className="grid gap-2 text-sm text-slate-500 dark:text-slate-400">
-                                  <li>Stainless Steel Pipe Fitting Tee</li>
-                                  <li>Stainless Steel Pipe Fitting Cross</li>
-                                  <li>Stainless Steel Pipe Fitting Elbow</li>
-                                  <li>IBR Approved SS Pipe Fittings</li>
-                                  <li>Stainless Steel Tubes</li>
-                                  <li>Seamless & ERW Pipes</li>
-                                </ul>
-                              </a>
-                            </NavigationMenuLink>
-                          </li>
                           <li>
                             <NavigationMenuLink asChild>
                               <a
@@ -164,6 +141,42 @@ export default function RootLayout({
                                 <p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
                                   Slip-on, blind, and weld neck flanges.
                                 </p>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <a
+                                href="/products/cable-wires"
+                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 hover:text-slate-900 dark:hover:text-slate-100"
+                              >
+                                <div className="text-sm font-medium leading-none">Cable Wires</div>
+                                <p className="line-clamp-2 text-sm leading-snug text-slate-500 dark:text-slate-400">
+                                  Electrical wires, cables, switchgear, and accessories.
+                                </p>
+                              </a>
+                            </NavigationMenuLink>
+                          </li>
+                          <li>
+                            <NavigationMenuLink asChild>
+                              <a
+                                href="/products?category=Pipes"
+                                className="flex w-full select-none flex-col justify-start rounded-md bg-slate-50 dark:bg-slate-900 p-3 no-underline outline-none focus:shadow-md hover:bg-slate-100 dark:hover:bg-slate-800 focus:bg-slate-100 dark:focus:bg-slate-800 transition-colors"
+                              >
+                                <div className="mb-2 text-sm font-medium text-slate-900 dark:text-slate-100">
+                                  Pipes & Tubes
+                                </div>
+                                <p className="mb-3 text-sm leading-tight text-muted-foreground">
+                                  Stainless steel and carbon steel pipes.
+                                </p>
+                                <ul className="grid gap-2 text-sm text-slate-500 dark:text-slate-400">
+                                  <li>Stainless Steel Pipe Fitting Tee</li>
+                                  <li>Stainless Steel Pipe Fitting Cross</li>
+                                  <li>Stainless Steel Pipe Fitting Elbow</li>
+                                  <li>IBR Approved SS Pipe Fittings</li>
+                                  <li>Stainless Steel Tubes</li>
+                                  <li>Seamless & ERW Pipes</li>
+                                </ul>
                               </a>
                             </NavigationMenuLink>
                           </li>
