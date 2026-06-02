@@ -1,7 +1,19 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Check, Download, FileText, ImageIcon, Info, MapPin, Phone, ShieldCheck, Star, Zap } from "lucide-react"
+import {
+  ArrowRight,
+  Check,
+  Download,
+  FileText,
+  ImageIcon,
+  Info,
+  MapPin,
+  Phone,
+  ShieldCheck,
+  Star,
+  Zap,
+} from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -187,9 +199,173 @@ const industryApplications = [
   },
 ]
 
+const ledProducts = [
+  {
+    title: "LED Tube Lights",
+    image: "/products/cable-wires/product-led-tube-lights.png",
+    summary:
+      "Linear LED tube lights for offices, shops, corridors, homes, workshops, and commercial lighting runs.",
+    details: [
+      "LED tube lights are used for clean linear illumination in ceiling channels, wall mounts, work areas, parking spaces, and utility rooms.",
+      "The range supports common brochure lengths such as 600 mm, 900 mm, 1200 mm, and 1500 mm based on site requirement.",
+    ],
+    specs: ["600 mm to 1500 mm lengths", "Commercial and residential use", "Low maintenance lighting", "Ceiling and wall mounting"],
+  },
+  {
+    title: "LED Panel Lights",
+    image: "/products/cable-wires/product-led-panel-lights.png",
+    summary:
+      "Round and square LED panel lights for false ceilings, offices, showrooms, reception areas, and homes.",
+    details: [
+      "LED panel lights provide soft, even illumination for modern ceilings where a clean and flush lighting finish is required.",
+      "Round and square panel options are suitable for commercial interiors, residential rooms, corridors, and retail display areas.",
+    ],
+    specs: ["Round panel lights", "Square panel lights", "Recessed ceiling use", "Uniform room lighting"],
+  },
+  {
+    title: "LED Street Lights",
+    image: "/products/cable-wires/product-led-street-lights.png",
+    summary:
+      "Outdoor street lighting fixtures for compounds, approach roads, parking areas, factories, and site perimeters.",
+    details: [
+      "LED street lights are used for outdoor area illumination where long operating hours and dependable fixture construction are important.",
+      "They support roadways, building entrances, industrial premises, warehouse exteriors, campuses, and project site lighting.",
+    ],
+    specs: ["Outdoor area lighting", "Pole-mounted fixtures", "Road and compound use", "Project supply support"],
+  },
+  {
+    title: "LED Flood Lights",
+    image: "/products/cable-wires/product-led-flood-lights.png",
+    summary:
+      "High-output LED flood lights for facade lighting, yards, warehouses, sports areas, and construction sites.",
+    details: [
+      "LED flood lights provide wide-angle illumination for open areas, loading bays, building facades, security zones, and maintenance sites.",
+      "The range is suitable when focused brightness, robust housings, and flexible mounting angles are needed.",
+    ],
+    specs: ["Wide beam coverage", "Outdoor and industrial use", "Bracket mounting", "Security and site lighting"],
+  },
+  {
+    title: "LED Bulbs",
+    image: "/products/cable-wires/product-led-bulbs.png",
+    summary:
+      "LED bulbs for homes, offices, shops, maintenance replacement, and everyday energy-efficient lighting.",
+    details: [
+      "LED bulbs are used for general lighting points, retrofit replacement, utility rooms, cabins, counters, and building maintenance requirements.",
+      "They are practical for contractors and facility teams who need dependable everyday lighting products along with wires and accessories.",
+    ],
+    specs: ["General lighting points", "Residential and office use", "Retrofit replacement", "Energy-efficient operation"],
+  },
+  {
+    title: "COB & Downlights",
+    image: "/products/cable-wires/product-cob-downlights.png",
+    summary:
+      "COB lights and downlights for focused ceiling illumination in showrooms, counters, offices, and interiors.",
+    details: [
+      "COB lights and downlights are used where controlled beam direction and a premium ceiling finish are required.",
+      "They suit retail counters, display areas, reception zones, corridors, conference rooms, and interior lighting upgrades.",
+    ],
+    specs: ["COB spotlight options", "Recessed downlights", "Focused beam lighting", "Interior and retail use"],
+  },
+]
+
+const completeRangeGroups = [
+  {
+    title: "Wires, Cables & Routing",
+    items: [
+      "All types of wires & cables",
+      "Electrical conduit pipes",
+      "Conduit accessories",
+      "Cable glands",
+      "Heavy-duty connectors",
+    ],
+  },
+  {
+    title: "Switchgear & Panel Products",
+    items: [
+      "Industrial switchgear",
+      "Panel accessories",
+      "Switches",
+      "Plug & socket range",
+      "LED indicators",
+    ],
+  },
+  {
+    title: "Earthing, Safety & Termination",
+    items: [
+      "Earthing material",
+      "Lightning arrestors",
+      "Lugs",
+      "EHI & twin-type lugs",
+      "Crimping tools",
+    ],
+  },
+  {
+    title: "Electrical Site Essentials",
+    items: [
+      "Ceiling fans",
+      "Motor pumps",
+      "Lighting products",
+      "Maintenance spares",
+      "Project supply support",
+    ],
+  },
+]
+
+const cableComparison = [
+  {
+    title: "HUB Project-Grade Cable Wires",
+    label: "Recommended for reliable installations",
+    image: "/products/cable-wires/comparison-premium-cable.png",
+    tone: "primary",
+    points: [
+      "Clean insulation finish and better handling during routing.",
+      "Bright copper conductor options for stable current flow.",
+      "Suitable for panels, buildings, factories, and project supply.",
+      "Supported with glands, lugs, ferrules, and termination accessories.",
+      "Selection guidance based on load, core count, and site application.",
+    ],
+  },
+  {
+    title: "Low-Grade Local Cable Wires",
+    label: "Common risks with poor selection",
+    image: "/products/cable-wires/comparison-local-cable.png",
+    tone: "muted",
+    points: [
+      "Uneven insulation can make installation and finishing less reliable.",
+      "Poor conductor quality may affect current carrying performance.",
+      "Messy bundling and weak finish can slow down site work.",
+      "Limited support for proper glands, lugs, and clean termination.",
+      "Wrong cable selection can increase maintenance and replacement work.",
+    ],
+  },
+]
+
+const cableComparisonRows = [
+  {
+    factor: "Insulation finish",
+    hub: "Cleaner outer finish for neat routing and professional installation.",
+    local: "Uneven finish can make routing, bending, and finishing less reliable.",
+  },
+  {
+    factor: "Conductor quality",
+    hub: "Copper conductor options selected for stable current flow.",
+    local: "Poor conductor selection may affect current carrying performance.",
+  },
+  {
+    factor: "Site readiness",
+    hub: "Cable, glands, lugs, ferrules, and accessories can be supplied together.",
+    local: "Accessories and termination support are often limited or mismatched.",
+  },
+  {
+    factor: "Project support",
+    hub: "Selection help based on load, core count, voltage, and application.",
+    local: "Wrong cable selection can increase maintenance and replacement work.",
+  },
+]
+
 const advantages = [
   "Product selection based on project load, installation method, and safety requirement.",
-  "Supply support for wires, cables, switchgear, glands, lugs, and accessories in one place.",
+  "Supply support for wires, cables, LED lights, switchgear, glands, lugs, and accessories in one place.",
   "SEO-focused cable wire product range for contractors, builders, panel makers, and industries.",
   "Reliable sourcing for Mumbai, Thane, Maharashtra, and pan-India electrical requirements.",
 ]
@@ -227,15 +403,15 @@ export default function CableWiresPage() {
           <div className="mt-10 max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium backdrop-blur">
               <Zap className="size-4" />
-              Electrical wires, cables and accessories
+              Electrical wires, cables, lighting and accessories
             </div>
             <h1 className="mt-5 text-balance text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               Cable Wires Manufacturer, Supplier & Exporter in India
             </h1>
             <p className="mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-slate-200">
               HUB Pipes & Fittings supplies electrical cable wires, FRLS house wires, flexible multicore cables,
-              armoured power cables, switchgear accessories, cable glands, lugs, ferrules, and wiring hardware for
-              industrial, commercial, and project requirements.
+              armoured power cables, LED lighting products, switchgear accessories, cable glands, lugs, ferrules, and
+              wiring hardware for industrial, commercial, and project requirements.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button asChild size="lg">
@@ -270,12 +446,78 @@ export default function CableWiresPage() {
                 </p>
                 <p>
                   Our cable wire range is built around common project needs: house wiring, industrial control wiring,
-                  flexible machine cabling, armoured power distribution, switchgear protection, and clean cable
-                  termination. The product mix is inspired by electrical brochure categories such as wires, cables,
-                  switchgear, cable glands, lugs, ferrules, and panel wiring accessories.
+                  flexible machine cabling, armoured power distribution, LED lighting, switchgear protection, and clean
+                  cable termination. The product mix is inspired by electrical brochure categories such as wires,
+                  cables, LED and lightings, switchgear, cable glands, lugs, ferrules, and panel wiring accessories.
                 </p>
               </div>
             </div>
+
+            <Card className="mt-12 overflow-hidden p-0">
+              <div className="border-b bg-muted/60 px-5 py-5 sm:px-6">
+                <div className="inline-flex items-center gap-2 rounded-md border bg-white px-3 py-2 text-sm font-medium text-foreground">
+                  <Star className="size-4 text-primary" />
+                  Complete electrical range
+                </div>
+                <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                  We Have a Complete Range of Electrical Products
+                </h2>
+                <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
+                  From wires and cables to switchgear, panel accessories, earthing material, conduit fittings, lighting,
+                  connectors, tools, fans, and motor pumps, we support complete site and project electrical requirements.
+                </p>
+              </div>
+
+              <div className="p-5 sm:p-6">
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                  {[
+                    ["20+", "Product lines"],
+                    ["4", "Core groups"],
+                    ["Pan India", "Supply support"],
+                    ["One Stop", "Sourcing"],
+                  ].map(([value, label]) => (
+                    <div key={label} className="min-w-0 rounded-md border bg-background px-4 py-3">
+                      <div className="truncate text-2xl font-bold leading-tight text-primary">{value}</div>
+                      <div className="mt-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">{label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-5 grid gap-4 md:grid-cols-2">
+                  {completeRangeGroups.map((group) => (
+                    <div key={group.title} className="min-w-0 rounded-lg border bg-card p-4">
+                      <h3 className="text-base font-semibold text-foreground">{group.title}</h3>
+                      <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                        {group.items.map((item) => (
+                          <div key={item} className="flex min-w-0 items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                            <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                            <span className="min-w-0">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {[
+                    "Industrial",
+                    "Commercial",
+                    "Construction",
+                    "Railway",
+                    "Oil & Gas",
+                    "Pharma",
+                    "Power Sector",
+                    "Factories",
+                    "Hotels",
+                  ].map((item) => (
+                    <span key={item} className="rounded-md border bg-muted px-3 py-1.5 text-xs font-medium text-foreground">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Card>
 
             <div className="mt-12">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -354,6 +596,191 @@ export default function CableWiresPage() {
             </div>
 
             <div className="mt-16">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                    LED & Lighting Products
+                  </h2>
+                  <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
+                    We also supply practical LED lighting products for electrical contractors, builders, facility
+                    maintenance teams, factories, offices, shops, and project sites.
+                  </p>
+                </div>
+              </div>
+
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="mt-8 min-w-0"
+              >
+                <CarouselContent>
+                  {ledProducts.map((product) => (
+                    <CarouselItem key={product.title} className="basis-full sm:basis-1/2 lg:basis-1/3">
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <button className="group block w-full cursor-pointer text-left">
+                            <div className="relative overflow-hidden rounded-lg border bg-white shadow-sm transition hover:shadow-lg">
+                              <img
+                                src={product.image}
+                                alt={product.title}
+                                className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                loading="lazy"
+                              />
+                            </div>
+                            <div className="mt-3 flex items-center justify-between gap-3">
+                              <div className="min-w-0 flex-1">
+                                <h3 className="truncate text-sm font-medium text-foreground">{product.title}</h3>
+                                <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+                                  {product.summary}
+                                </p>
+                              </div>
+                              <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-white/90 text-foreground ring-1 ring-border backdrop-blur-sm transition group-hover:bg-primary group-hover:text-white">
+                                <ArrowRight className="size-4" />
+                              </span>
+                            </div>
+                          </button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-2xl">
+                          <DialogHeader>
+                            <DialogTitle>{product.title}</DialogTitle>
+                            <DialogDescription>{product.summary}</DialogDescription>
+                          </DialogHeader>
+                          <ScrollArea className="max-h-[68vh]">
+                            <div className="space-y-5 px-1">
+                              <img
+                                src={product.image}
+                                alt={product.title}
+                                className="aspect-[16/9] w-full rounded-lg object-cover"
+                                loading="lazy"
+                              />
+                              <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
+                                {product.details.map((text) => (
+                                  <p key={text}>{text}</p>
+                                ))}
+                              </div>
+                              <div className="grid gap-2 sm:grid-cols-2">
+                                {product.specs.map((spec) => (
+                                  <div key={spec} className="flex items-center gap-2 rounded-md border px-3 py-2 text-sm">
+                                    <Check className="size-4 text-primary" />
+                                    <span>{spec}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </ScrollArea>
+                        </DialogContent>
+                      </Dialog>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-0 z-10 bg-white/95 shadow-md hover:bg-white" />
+                <CarouselNext className="right-0 z-10 bg-white/95 shadow-md hover:bg-white" />
+              </Carousel>
+            </div>
+
+            <div className="mt-16">
+              <div>
+                <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                  Project-Grade Cable Wires vs Local Alternatives
+                </h2>
+                <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
+                  Good cable selection is not only about price. It affects finishing, current flow, termination quality,
+                  and long-term maintenance at site.
+                </p>
+              </div>
+
+              <Card className="mt-8 overflow-hidden p-0">
+                <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
+                  <div className="border-b bg-white lg:border-b-0 lg:border-r">
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={cableComparison[0].image}
+                        alt={cableComparison[0].title}
+                        className="aspect-[4/3] w-full object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute left-4 top-4 rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white shadow-sm">
+                        Recommended
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-xl font-bold tracking-tight text-foreground">{cableComparison[0].title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        Premium finish, organized supply, proper accessories, and selection support for site-ready
+                        electrical work.
+                      </p>
+                      <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                        {["Stable current flow", "Clean termination", "Better project finish", "Accessory support"].map((item) => (
+                          <div key={item} className="flex items-center gap-2 rounded-md border bg-primary/5 px-3 py-2 text-sm font-medium text-foreground">
+                            <Check className="size-4 text-primary" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-muted/40">
+                    <div className="relative overflow-hidden border-b bg-white">
+                      <img
+                        src={cableComparison[1].image}
+                        alt={cableComparison[1].title}
+                        className="aspect-[4/3] w-full object-cover grayscale-[0.15]"
+                        loading="lazy"
+                      />
+                      <div className="absolute left-4 top-4 rounded-md bg-slate-700 px-3 py-1.5 text-xs font-semibold text-white shadow-sm">
+                        Compare carefully
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-xl font-bold tracking-tight text-foreground">{cableComparison[1].title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        Lower-grade cable can look cheaper upfront, but poor selection or weak finishing can create
+                        avoidable site issues later.
+                      </p>
+                      <div className="mt-4 rounded-md border bg-white p-4">
+                        <div className="text-sm font-semibold text-foreground">Common risk areas</div>
+                        <div className="mt-3 grid gap-2">
+                          {["Uneven insulation", "Weak termination support", "Mismatch with site load", "More maintenance work"].map((item) => (
+                            <div key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <span className="size-1.5 shrink-0 rounded-full bg-muted-foreground" />
+                              <span>{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border-t">
+                  <div className="grid bg-muted/60 px-4 py-3 text-sm font-semibold text-foreground sm:grid-cols-[1fr_1.35fr_1.35fr]">
+                    <div>Quality Factor</div>
+                    <div className="hidden sm:block">HUB Cable Supply</div>
+                    <div className="hidden sm:block">Low-Grade Local Cable</div>
+                  </div>
+                  <div className="divide-y">
+                    {cableComparisonRows.map((row) => (
+                      <div key={row.factor} className="grid gap-3 px-4 py-4 text-sm sm:grid-cols-[1fr_1.35fr_1.35fr]">
+                        <div className="font-semibold text-foreground">{row.factor}</div>
+                        <div className="rounded-md bg-primary/5 px-3 py-2 text-muted-foreground sm:bg-transparent sm:px-0 sm:py-0">
+                          <span className="mb-1 block text-xs font-semibold text-primary sm:hidden">HUB Cable Supply</span>
+                          {row.hub}
+                        </div>
+                        <div className="rounded-md bg-muted px-3 py-2 text-muted-foreground sm:bg-transparent sm:px-0 sm:py-0">
+                          <span className="mb-1 block text-xs font-semibold text-foreground sm:hidden">Low-Grade Local Cable</span>
+                          {row.local}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            <div className="mt-16">
               <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 Cable Wire Specifications
               </h2>
@@ -368,12 +795,12 @@ export default function CableWiresPage() {
                     </thead>
                     <tbody className="divide-y">
                       {[
-                        ["Product Types", "House wires, flexible cables, armoured cables, control cables, switchgear and accessories"],
+                        ["Product Types", "House wires, flexible cables, armoured cables, control cables, LED lighting, switchgear and accessories"],
                         ["Conductors", "Copper and aluminium options based on project requirement"],
                         ["Insulation", "PVC, FR, FRLS and application-specific insulation options"],
                         ["Core Options", "Single core, twin core, three core and multicore cable configurations"],
-                        ["Accessories", "Cable glands, lugs, ferrules, terminals, heat shrink sleeves and cable ties"],
-                        ["Applications", "Buildings, factories, panels, machines, distribution boards and site wiring"],
+                        ["Accessories", "Cable glands, lugs, ferrules, terminals, heat shrink sleeves, cable ties and lighting fixtures"],
+                        ["Applications", "Buildings, factories, panels, machines, distribution boards, LED lighting and site wiring"],
                       ].map(([label, value]) => (
                         <tr key={label}>
                           <td className="px-4 py-3 font-medium text-foreground">{label}</td>
@@ -463,6 +890,12 @@ export default function CableWiresPage() {
                 </div>
                 <div className="grid gap-3 p-4">
                   {subProducts.map((item) => (
+                    <Link key={item.title} href="/contact" className="group flex items-center justify-between rounded-md border px-3 py-2 hover:bg-muted">
+                      <span className="text-sm font-medium">{item.title}</span>
+                      <ArrowRight className="size-4 text-muted-foreground transition group-hover:translate-x-0.5" />
+                    </Link>
+                  ))}
+                  {ledProducts.map((item) => (
                     <Link key={item.title} href="/contact" className="group flex items-center justify-between rounded-md border px-3 py-2 hover:bg-muted">
                       <span className="text-sm font-medium">{item.title}</span>
                       <ArrowRight className="size-4 text-muted-foreground transition group-hover:translate-x-0.5" />
