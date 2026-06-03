@@ -17,6 +17,7 @@ import {
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
+import { SiteFooter } from "@/components/SiteFooter"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   Breadcrumb,
@@ -966,6 +967,7 @@ export default function CableWiresPage() {
           </aside>
         </div>
       </section>
+        <SiteFooter />
     </div>
   )
 }

@@ -14,6 +14,7 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel"
+import { SiteFooter } from "@/components/SiteFooter"
 import Fade from "embla-carousel-fade"
 
 export default function HomePage() {
@@ -834,78 +835,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-
-
-
-
-        <footer className="border-t bg-slate-950 py-12 text-slate-400">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 md:grid-cols-4">
-              <div>
-                <div className="mb-4 flex items-center gap-2">
-                  <img src="/logo/logo.png" alt="HUB" className="h-10 w-10 rounded-full object-cover" />
-                  <h3 className="text-lg font-semibold text-white">HUB Pipe & Fitting</h3>
-                </div>
-                <p className="text-sm leading-relaxed">
-                  Hub‍‌‍‍‌‍‌‍‍‌ Pipes & Fittings is a leading Plates, Buttweld Fittings, and Round Bar manufacturer and supplier in India. We are a metal products wholesaler of premium grades, and a complete range of metals is readily available in large quantities in major cities like Gujarat, Maharashtra, and ‍‌‍‍‌‍‌‍‍‌Rajasthan.
-                </p>
-              </div>
-              <div>
-                <h4 className="mb-4 text-sm font-semibold text-white">Quick Links</h4>
-                <div className="space-y-2 text-sm">
-                  <Link href="/" className="block hover:text-white">
-                    Home
-                  </Link>
-                  <Link href="/about" className="block hover:text-white">
-                    About Us
-                  </Link>
-                  <Link href="/products" className="block hover:text-white">
-                    Products
-                  </Link>
-                  <Link href="/contact" className="block hover:text-white">
-                    Contact
-                  </Link>
-                </div>
-              </div>
-              <div>
-                <h4 className="mb-4 text-sm font-semibold text-white">Products</h4>
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  {[
-                    "Pipes",
-                    "Tubes",
-                    "Plates",
-                    "Flanges",
-                    "Buttweld Fittings",
-                    "Socket Weld Fittings",
-                    "Olets",
-                    "Bars",
-                  ].map((p) => (
-                    <Link key={p} href="/products" className="hover:text-white">
-                      {p}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h4 className="mb-4 text-sm font-semibold text-white">Contact Info</h4>
-                <div className="space-y-2 text-sm">
-                  <p>23 Bharti Park, Mira Road East</p>
-                  <p>Thane, Maharashtra 401107</p>
-                  <a href="tel:+918976691734" className="block hover:text-white">
-                    +91 89766 91734
-                  </a>
-                  <a href="https://www.hubpipes.com" className="block hover:text-white">
-                    www.hubpipes.com
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="mt-8 border-t border-slate-800 pt-8 text-center text-sm">
-              <p>© 2025 HUB Pipe & Fitting. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
+        <SiteFooter />
       </div>
     </div>
   )
