@@ -34,6 +34,13 @@ export const metadata: Metadata = {
     "tube fittings",
     "forged fittings",
     "induction bends",
+    "instrumentation valves",
+    "needle valves",
+    "manifold valves",
+    "ball valves",
+    "check valves",
+    "monoflange valves",
+    "pressure relief valves",
     "manufacturing trader stockiest",
     "HUB Pipe Fitting",
     "Mumbai",
@@ -73,6 +80,7 @@ export const metadata: Metadata = {
 }
 
 import { MobileNav } from "@/components/MobileNav"
+import { ValvesNavMenu } from "@/components/valves/ValvesNavMenu"
 
 export default function RootLayout({
   children,
@@ -198,6 +206,7 @@ export default function RootLayout({
                     </NavigationMenuItem>
                   </NavigationMenuList>
                 </NavigationMenu>
+                <ValvesNavMenu />
                 <a href="/contact" className="text-sm font-medium text-muted-foreground hover:text-primary">Contact</a>
               </nav>
               <a

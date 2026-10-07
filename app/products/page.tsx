@@ -1,26 +1,49 @@
 "use client"
 import { useState, useEffect, Suspense } from "react"
-import { useSearchParams } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogClose } from "@/components/ui/dialog"
 import Link from "next/link"
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb"
 import { ArrowLeft, Download, Info } from "lucide-react"
+import { ALL_VALVES, ValvesCatalog } from "@/components/valves/ValvesCatalog"
+import { getValveCategory, valveCategories } from "@/lib/valves"
 
 function ProductsContent() {
+  const router = useRouter()
   const searchParams = useSearchParams()
   const initialCategory = searchParams.get("category") || "All"
   const [activeCategory, setActiveCategory] = useState(initialCategory)
-  const categories = ["All", "Pipes", "Tubes", "Plates", "Flanges", "Fitting", "Round Bar", "Pipe Bends", "Olets"]
+  const [activeValveType, setActiveValveType] = useState(searchParams.get("type") || ALL_VALVES)
+  const categories = ["All", "Pipes", "Tubes", "Plates", "Flanges", "Fitting", "Round Bar", "Pipe Bends", "Olets", "Valves"]
 
   useEffect(() => {
     const category = searchParams.get("category")
     if (category && categories.includes(category)) {
       setActiveCategory(category)
     }
+    setActiveValveType(getValveCategory(searchParams.get("type"))?.slug ?? ALL_VALVES)
   }, [searchParams])
+
+  // Deep links such as /products?category=Valves (navbar "Valves") land on the catalogue, not the hero
+  useEffect(() => {
+    if (searchParams.get("category")) {
+      document.getElementById("catalog")?.scrollIntoView({ block: "start" })
+    }
+  }, [])
+
+  // Keep the URL in sync so tabs are shareable and survive a refresh
+  const selectCategory = (category: string, valveType: string = ALL_VALVES) => {
+    setActiveCategory(category)
+    setActiveValveType(valveType)
+    const params = new URLSearchParams()
+    if (category !== "All") params.set("category", category)
+    if (category === "Valves" && valveType !== ALL_VALVES) params.set("type", valveType)
+    const query = params.toString()
+    router.replace(query ? `/products?${query}` : "/products", { scroll: false })
+  }
   const sanitizeUrl = (url: string) => url?.replace(/\)+$/g, "")
   const rawProducts = [
     {
@@ -227,7 +250,17 @@ function ProductsContent() {
       image: "/products/duplex-steel-olets.jpg",
     },
   ]
-  const catalog = rawProducts.map((p) => ({ ...p, image: sanitizeUrl(p.image) }))
+  const valveProducts = valveCategories.map((v) => ({
+    name: v.name,
+    category: "Valves",
+    description: v.summary,
+    image: v.image,
+    valveSlug: v.slug,
+  }))
+  const catalog: { name: string; category: string; description: string; image: string; valveSlug?: string }[] = [
+    ...rawProducts,
+    ...valveProducts,
+  ].map((p) => ({ ...p, image: sanitizeUrl(p.image) }))
   const filtered = activeCategory === "All" ? catalog : catalog.filter((p) => p.category === activeCategory)
   // const products = [
   //   {
@@ -423,19 +456,22 @@ function ProductsContent() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20">
+        <section id="catalog" className="scroll-mt-24 py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap items-center gap-2">
               {categories.map((c) => (
                 <Button
                   key={c}
-                  onClick={() => setActiveCategory(c)}
+                  onClick={() => selectCategory(c)}
                   className={`${activeCategory === c ? "bg-primary text-primary-foreground" : "bg-white text-foreground"} border px-4 py-2`}
                 >
                   {c}
                 </Button>
               ))}
             </div>
+            {activeCategory === "Valves" ? (
+              <ValvesCatalog activeType={activeValveType} onTypeChange={(type) => selectCategory("Valves", type)} />
+            ) : (
             <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {filtered.map((item) => (
                 <Dialog key={`${item.category}-${item.name}`}>
@@ -480,12 +516,20 @@ function ProductsContent() {
                           />
                         </div>
                         <p className="text-lg leading-relaxed text-muted-foreground">{item.description}</p>
+                        {item.valveSlug && (
+                          <DialogClose asChild>
+                            <Button onClick={() => selectCategory("Valves", item.valveSlug)}>
+                              View all {item.name}
+                            </Button>
+                          </DialogClose>
+                        )}
                       </div>
                     </ScrollArea>
                   </DialogContent>
                 </Dialog>
               ))}
             </div>
+            )}
           </div>
         </section>
 

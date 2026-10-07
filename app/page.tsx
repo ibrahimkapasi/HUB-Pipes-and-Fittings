@@ -15,6 +15,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 import { SiteFooter } from "@/components/SiteFooter"
+import { valveCategories, valvesStockImage, valvesTabHref } from "@/lib/valves"
 import Fade from "embla-carousel-fade"
 
 export default function HomePage() {
@@ -92,7 +93,15 @@ export default function HomePage() {
     }
   }, [otherProductsApi])
 
-  const productCategories = [
+  const productCategories: { name: string; image: string; items: (string | { name: string; href: string })[] }[] = [
+    {
+      name: "Valves",
+      image: valvesStockImage,
+      items: [
+        ...valveCategories.map((v) => ({ name: v.name, href: valvesTabHref(v.slug) })),
+        { name: "View All Valves", href: valvesTabHref() },
+      ],
+    },
     {
       name: "Pipes & Tubes",
       image: "/industrial-steel-pipes-texture.jpg",
@@ -542,17 +551,20 @@ export default function HomePage() {
                       <div className="flex flex-1 flex-col p-6">
                         <h3 className="mb-4 text-2xl font-bold text-primary">{category.name}</h3>
                         <ul className="space-y-3">
-                          {category.items.map((item) => (
-                            <li key={item}>
-                              <Link
-                                href="/products"
-                                className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-                              >
-                                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                {item}
-                              </Link>
-                            </li>
-                          ))}
+                          {category.items.map((item) => {
+                            const label = typeof item === "string" ? item : item.name
+                            return (
+                              <li key={label}>
+                                <Link
+                                  href={typeof item === "string" ? "/products" : item.href}
+                                  className="group flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                                >
+                                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                  {label}
+                                </Link>
+                              </li>
+                            )
+                          })}
                         </ul>
                       </div>
                     </Card>

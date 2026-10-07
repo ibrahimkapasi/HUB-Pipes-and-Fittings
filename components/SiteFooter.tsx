@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { valvesTabHref } from "@/lib/valves"
 
 const productLinks = [
   "Pipes",
@@ -54,6 +55,9 @@ export function SiteFooter() {
                   {product}
                 </Link>
               ))}
+              <Link href={valvesTabHref()} className="block break-words leading-6 hover:text-white">
+                Valves
+              </Link>
             </div>
           </div>
 

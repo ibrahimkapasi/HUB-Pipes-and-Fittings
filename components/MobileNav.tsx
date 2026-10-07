@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, Phone, Mail, Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { ChevronDown, Menu, Phone, Mail, Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -17,9 +17,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { valveCategories, valvesTabHref } from "@/lib/valves"
 
 export function MobileNav() {
   const [open, setOpen] = useState(false)
+  const [valvesOpen, setValvesOpen] = useState(false)
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -96,6 +98,48 @@ export function MobileNav() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+
+          <div>
+            <div className="flex items-center justify-between">
+              <Link
+                href={valvesTabHref()}
+                onClick={() => setOpen(false)}
+                className="text-lg font-medium hover:text-primary"
+              >
+                Valves
+              </Link>
+              <button
+                type="button"
+                onClick={() => setValvesOpen((v) => !v)}
+                aria-expanded={valvesOpen}
+                aria-label="Show valve categories"
+                className="rounded p-1 text-muted-foreground hover:text-primary"
+              >
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${valvesOpen ? "rotate-180" : ""}`} />
+              </button>
+            </div>
+            {valvesOpen && (
+              <div className="mt-3 flex flex-col gap-3 pl-4">
+                {valveCategories.map((c) => (
+                  <Link
+                    key={c.slug}
+                    href={valvesTabHref(c.slug)}
+                    onClick={() => setOpen(false)}
+                    className="text-base text-muted-foreground hover:text-primary"
+                  >
+                    {c.name}
+                  </Link>
+                ))}
+                <Link
+                  href={valvesTabHref()}
+                  onClick={() => setOpen(false)}
+                  className="text-base text-muted-foreground hover:text-primary"
+                >
+                  View All Valves
+                </Link>
+              </div>
+            )}
+          </div>
 
           <Link
             href="/contact"

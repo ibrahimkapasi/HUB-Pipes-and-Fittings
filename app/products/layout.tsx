@@ -4,7 +4,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Products - HUB Pipe & Fitting | Pipes, Flanges, Fittings & More",
   description:
-    "Comprehensive range of industrial piping products: Pipes, Tubes, Plates, Flanges, Buttweld Fittings, Socket Weld, Olets, Bars, Tube Fittings, and Induction Bends. All products meet ASTM, ASME international standards.",
+    "Comprehensive range of industrial piping products: Pipes, Tubes, Plates, Flanges, Buttweld Fittings, Socket Weld, Olets, Bars, Tube Fittings, Induction Bends, and instrumentation Valves (needle, manifold, monoflange, ball, check and pressure relief valves). All products meet ASTM, ASME international standards.",
   keywords: [
     "pipes ASTM A312",
     "flanges ANSI B16.5",
@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "duplex steel",
     "nickel alloys",
     "industrial fittings India",
+    "instrumentation valves India",
+    "needle valves",
+    "manifold valves",
   ],
   openGraph: {
     title: "Products - HUB Pipe & Fitting",
