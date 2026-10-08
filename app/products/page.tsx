@@ -9,7 +9,7 @@ import Link from "next/link"
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb"
 import { ArrowLeft, Download, Info } from "lucide-react"
 import { ALL_VALVES, ValvesCatalog } from "@/components/valves/ValvesCatalog"
-import { getValveCategory, valveCategories } from "@/lib/valves"
+import { isValveSlug, standaloneValves, valveCategories } from "@/lib/valves"
 
 function ProductsContent() {
   const router = useRouter()
@@ -24,7 +24,8 @@ function ProductsContent() {
     if (category && categories.includes(category)) {
       setActiveCategory(category)
     }
-    setActiveValveType(getValveCategory(searchParams.get("type"))?.slug ?? ALL_VALVES)
+    const type = searchParams.get("type")
+    setActiveValveType(type && isValveSlug(type) ? type : ALL_VALVES)
   }, [searchParams])
 
   // Deep links such as /products?category=Valves (navbar "Valves") land on the catalogue, not the hero
@@ -250,7 +251,7 @@ function ProductsContent() {
       image: "/products/duplex-steel-olets.jpg",
     },
   ]
-  const valveProducts = valveCategories.map((v) => ({
+  const valveProducts = [...valveCategories, ...standaloneValves].map((v) => ({
     name: v.name,
     category: "Valves",
     description: v.summary,
@@ -519,7 +520,7 @@ function ProductsContent() {
                         {item.valveSlug && (
                           <DialogClose asChild>
                             <Button onClick={() => selectCategory("Valves", item.valveSlug)}>
-                              View all {item.name}
+                              View {item.name}
                             </Button>
                           </DialogClose>
                         )}

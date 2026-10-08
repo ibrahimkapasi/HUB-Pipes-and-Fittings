@@ -72,7 +72,6 @@ export const valveCategories: ValveCategory[] = [
     ],
     products: [
       { name: "Needle Valve Screwed Bonnet (Female x Female)", image: `${IMG}/needle-valve.jpg` },
-      { name: "Needle Valve Screwed Bonnet (Male x Female)", image: `${IMG}/needle-valve.jpg` },
       { name: "Panel Mount Needle Valve Screwed Ends (Female x Female)", image: `${IMG}/needle-valve.jpg` },
       { name: "Needle Valve Screwed Bonnet Double Ferrule Tube Ends (Tube x Tube)", image: `${IMG}/needle-valve.jpg` },
       { name: "Needle Valve Screwed Bonnet (Male x Male)", image: `${IMG}/needle-valve.jpg` },
@@ -145,7 +144,6 @@ export const valveCategories: ValveCategory[] = [
     products: [
       { name: "Multi-Port Gauge Valve", image: `${IMG}/multi-port-gauge-valve.jpg` },
       { name: "Single Block & Bleed Gauge Valve", image: `${IMG}/block-and-bleed-valve.jpg` },
-      { name: "Double Block & Bleed Gauge Valve", image: `${IMG}/block-and-bleed-valve.jpg` },
       { name: "Single Block & Bleed Gauge Valve (Female x Female)", image: `${IMG}/block-and-bleed-valve.jpg` },
       { name: "Double Block & Bleed Gauge Valve (Female x Female)", image: `${IMG}/block-and-bleed-valve.jpg` },
       { name: "Two Valve (Three-Way) Manifold for Pressure Instruments", image: `${IMG}/two-valve-angle-manifold.jpg` },
@@ -285,7 +283,6 @@ export const valveCategories: ValveCategory[] = [
       { name: "High Pressure Ball Valve (3 Way)", image: `${IMG}/three-way-ball-valve.jpg` },
       { name: "High Pressure Ball Valve (Male x Female)", image: `${IMG}/tube-end-ball-valve.jpg` },
       { name: "High Pressure Ball Valve (Male x Male)", image: `${IMG}/tube-end-ball-valve.jpg` },
-      { name: "Mini Ball Valve", image: `${IMG}/tube-end-ball-valve.jpg` },
       { name: "Panel Mount Ball Valve", image: `${IMG}/tube-end-ball-valve.jpg` },
       { name: "Panel Mount Ball Valve 2 Way (OD x OD)", image: `${IMG}/tube-end-ball-valve.jpg` },
       { name: "Panel Mount Ball Valve 2 Way (Female)", image: `${IMG}/tube-end-ball-valve.jpg` },
@@ -359,8 +356,7 @@ export const valveCategories: ValveCategory[] = [
       { name: "Check Valve (Female x Female) 3K", image: `${IMG}/female-check-valve.jpg` },
       { name: "Check Valve (Female x Female) 6K", image: `${IMG}/check-valve.jpg` },
       { name: "Check Valve (Female x Female) 10K", image: `${IMG}/inline-check-valve.jpg` },
-      { name: "Check Valve (Male x Female)", image: `${IMG}/check-valve.jpg` },
-      { name: "Check Valve (Male x Male)", image: `${IMG}/inline-check-valve.jpg` },
+      { name: "Check Valve (Male x Male)", image: `${IMG}/male-male-check-valve.jpg` },
       { name: "Check Valve (Inch OD Tubes)", image: `${IMG}/female-check-valve.jpg` },
     ],
     faqs: [
@@ -415,8 +411,7 @@ export const valveCategories: ValveCategory[] = [
       "High-pressure gas and chemical injection",
     ],
     products: [
-      { name: "High Pressure Ball Valve 2 Way", image: `${IMG}/tube-end-ball-valve.jpg` },
-      { name: "High Pressure Ball Valve 3 Way", image: `${IMG}/three-way-ball-valve.jpg` },
+      { name: "Ball Valve 3 Way (High Pressure)", image: `${IMG}/three-way-ball-valve.jpg` },
       { name: "High Pressure Check Valve / NRV", image: `${IMG}/inline-check-valve.jpg` },
       { name: "Flow Control Valve with Check Valve", image: `${IMG}/needle-valve-handwheel.jpg` },
       { name: "Flow Control Valve without Check Valve", image: `${IMG}/needle-valve-handwheel.jpg` },
@@ -504,6 +499,96 @@ export const valveCategories: ValveCategory[] = [
   },
 ]
 
-export const valveProductCount = valveCategories.reduce((n, c) => n + c.products.length, 0)
+export type StandaloneValve = {
+  slug: string
+  name: string
+  image: string
+  /** Short label shown on the card badge */
+  type: string
+  summary: string
+  specs: { label: string; value: string }[]
+}
+
+/** Individual valves listed as their own cards in the "All Valves" section, next to the categories */
+export const standaloneValves: StandaloneValve[] = [
+  {
+    slug: "ball-valves-2-way-high-pressure",
+    name: "Ball Valves 2 Way (High Pressure)",
+    image: `${IMG}/tube-end-ball-valve.jpg`,
+    type: "Ball Valve",
+    summary:
+      "Quarter-turn 2 way ball valve with a heavy-wall body for high-pressure hydraulic, gas and instrumentation lines, giving fast and positive shut-off.",
+    specs: [
+      { label: "Working Pressure", value: "6,000 PSI (414 bar); 10,000 PSI on request" },
+      { label: "End Connections", value: "Tube OD x OD, Female NPT, Male x Female" },
+      { label: "Sizes", value: '1/4" to 1" NPT; 6 mm to 25 mm tube OD' },
+      { label: "Materials", value: "SS 304, SS 316, Duplex" },
+    ],
+  },
+  {
+    slug: "check-valve-male-x-female",
+    name: "Check Valve (Male x Female)",
+    image: `${IMG}/male-female-check-valve.jpg`,
+    type: "Check Valve",
+    summary:
+      "Spring-loaded poppet check valve (NRV) with male x female threaded ends that allows flow in one direction and closes automatically on reverse flow.",
+    specs: [
+      { label: "Pressure Class", value: "3,000 PSI, 6,000 PSI and 10,000 PSI" },
+      { label: "End Connections", value: "Male NPT / BSP x Female NPT / BSP" },
+      { label: "Sizes", value: '1/8" to 1"' },
+      { label: "Seals & Materials", value: "Viton, Nitrile, PTFE seals; SS 304 / SS 316 body" },
+    ],
+  },
+  {
+    slug: "double-block-bleed-gauge-valves",
+    name: "Double Block & Bleed Gauge Valves",
+    image: `${IMG}/block-and-bleed-valve.jpg`,
+    type: "Gauge Valve",
+    summary:
+      "Two isolation valves in series with a bleed valve between them, giving positive isolation so pressure gauges can be removed or calibrated safely.",
+    specs: [
+      { label: "Working Pressure", value: "Up to 6,000 PSI (414 bar) @ 38°C" },
+      { label: "End Connections", value: '1/2" NPT Male x Female; Female x Female' },
+      { label: "Temperature", value: "-54°C to 240°C (PTFE), up to 450°C with graphite" },
+      { label: "Materials", value: "SS 316, Monel 400, Hastelloy C276, Duplex" },
+    ],
+  },
+  {
+    slug: "needle-valves-screwed-bonnet-male-x-female",
+    name: "Needle Valves Screwed Bonnet (Male x Female)",
+    image: `${IMG}/male-female-needle-valve.jpg`,
+    type: "Needle Valve",
+    summary:
+      "Screwed bonnet needle valve with male x female NPT ends for precise flow control and isolation of gauges, transmitters and sample lines.",
+    specs: [
+      { label: "Working Pressure", value: "6,000 PSI (414 bar) & 10,000 PSI (690 bar)" },
+      { label: "End Connections", value: "Male NPT / BSP x Female NPT / BSP" },
+      { label: "Sizes", value: '1/4", 3/8", 1/2", 3/4", 1"' },
+      { label: "Materials", value: "SS 304 / 316, Monel 400, Hastelloy C276, Inconel 625" },
+    ],
+  },
+  {
+    slug: "mini-ball-valve",
+    name: "Mini Ball Valve",
+    image: `${IMG}/mini-ball-valve.jpg`,
+    type: "Ball Valve",
+    summary:
+      "Compact quarter-turn ball valve for tight spaces on air, water, oil and instrument lines, with a short lever for quick on/off operation.",
+    specs: [
+      { label: "Pressure Rating", value: "PN63 (63 bar / approx. 900 PSI)" },
+      { label: "End Connections", value: "Male x Female, Female x Female" },
+      { label: "Sizes", value: '1/8", 1/4", 3/8", 1/2"' },
+      { label: "Materials", value: "SS 304, SS 316" },
+    ],
+  },
+]
+
+export const getStandaloneValve = (slug: string | null | undefined) => standaloneValves.find((v) => v.slug === slug)
+
+/** True for any slug that opens a modal in the Valves tab (a category or a standalone valve) */
+export const isValveSlug = (slug: string | null | undefined) => !!(getValveCategory(slug) || getStandaloneValve(slug))
+
+export const valveProductCount =
+  valveCategories.reduce((n, c) => n + c.products.length, 0) + standaloneValves.length
 
 export const getValveCategory = (slug: string | null | undefined) => valveCategories.find((c) => c.slug === slug)

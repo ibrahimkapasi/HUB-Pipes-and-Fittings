@@ -5,19 +5,46 @@ import { ArrowRight, CheckCircle2, Gauge, Layers, Phone, ShieldCheck } from "luc
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { getValveCategory, valveCategories, valveProductCount, valvesHeroImage } from "@/lib/valves"
+import {
+  getStandaloneValve,
+  getValveCategory,
+  standaloneValves,
+  valveCategories,
+  valveProductCount,
+  valvesHeroImage,
+} from "@/lib/valves"
 
-/** Value of `activeType` when no category modal is open */
+/** Value of `activeType` when no modal is open */
 export const ALL_VALVES = "all"
 
 const heroTiles = ["needle-valves", "ball-valves", "manifold-valves", "monoflange-valves"]
   .map((slug) => getValveCategory(slug))
   .filter((c) => c !== undefined)
 
+/** Cards in the "All Valves" grid: every category, followed by the individually listed valves */
+const allValvesCards = [
+  ...valveCategories.map((c) => ({
+    slug: c.slug,
+    name: c.name,
+    image: c.image,
+    summary: c.summary,
+    badge: `${c.products.length} variants`,
+    cta: `View ${c.name}`,
+  })),
+  ...standaloneValves.map((v) => ({
+    slug: v.slug,
+    name: v.name,
+    image: v.image,
+    summary: v.summary,
+    badge: v.type,
+    cta: "View Details",
+  })),
+]
+
 /**
- * Valves tab of the Products page: hero, then every valve category as a card.
- * Clicking a card opens a modal listing the valves in that category.
- * `activeType` is the slug of the category whose modal is open (from ?type=), or ALL_VALVES.
+ * Valves tab of the Products page: hero, then the "All Valves" grid of categories and individual valves.
+ * Clicking a category opens a modal listing its valves; clicking an individual valve opens its details.
+ * `activeType` is the slug whose modal is open (from ?type=), or ALL_VALVES.
  */
 export function ValvesCatalog({
   activeType,
@@ -27,6 +54,7 @@ export function ValvesCatalog({
   onTypeChange: (type: string) => void
 }) {
   const active = getValveCategory(activeType)
+  const activeValve = getStandaloneValve(activeType)
 
   return (
     <div className="mt-8 space-y-12">
@@ -108,10 +136,12 @@ export function ValvesCatalog({
           <h3 id="valve-categories-heading" className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             All Valves
           </h3>
-          <p className="mt-2 text-muted-foreground">Select a category to see every valve we supply in that range.</p>
+          <p className="mt-2 text-muted-foreground">
+            Select a category to see every valve in that range, or a valve to see its details.
+          </p>
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {valveCategories.map((c) => (
+          {allValvesCards.map((c) => (
             <Card
               key={c.slug}
               className="group flex cursor-pointer flex-col overflow-hidden border bg-white p-0 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
@@ -125,7 +155,7 @@ export function ValvesCatalog({
                   className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.04]"
                 />
                 <span className="absolute left-3 top-3 rounded bg-primary px-2 py-0.5 text-xs font-medium text-primary-foreground">
-                  {c.products.length} variants
+                  {c.badge}
                 </span>
               </div>
               <div className="flex flex-1 flex-col gap-2 border-t px-4 pb-4 pt-3">
@@ -140,7 +170,7 @@ export function ValvesCatalog({
                     onTypeChange(c.slug)
                   }}
                 >
-                  View {c.name}
+                  {c.cta}
                   <ArrowRight className="ml-1 size-4" />
                 </Button>
               </div>
@@ -148,6 +178,45 @@ export function ValvesCatalog({
           ))}
         </div>
       </section>
+
+      {/* Single valve modal: photo, description and key specs */}
+      <Dialog open={!!activeValve} onOpenChange={(open) => !open && onTypeChange(ALL_VALVES)}>
+        {activeValve && (
+          <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-3xl">
+            <div className="grid gap-6 sm:grid-cols-[260px_1fr]">
+              <div className="aspect-square overflow-hidden rounded-lg border bg-white p-3">
+                <img src={activeValve.image} alt={activeValve.name} className="h-full w-full object-contain" />
+              </div>
+              <div className="flex flex-col">
+                <DialogHeader className="text-left">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary">{activeValve.type}</p>
+                  <DialogTitle className="text-xl sm:text-2xl">{activeValve.name}</DialogTitle>
+                  <DialogDescription className="leading-relaxed">{activeValve.summary}</DialogDescription>
+                </DialogHeader>
+                <dl className="mt-4 grid gap-3 rounded-lg border bg-slate-50 p-4 text-sm">
+                  {activeValve.specs.map((s) => (
+                    <div key={s.label}>
+                      <dt className="font-semibold text-foreground">{s.label}</dt>
+                      <dd className="text-muted-foreground">{s.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-3 border-t pt-4">
+              <Button asChild>
+                <Link href="/contact">Request a Quote</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <a href="tel:+918976691734">
+                  <Phone className="mr-2 size-4" />
+                  Call Us
+                </a>
+              </Button>
+            </div>
+          </DialogContent>
+        )}
+      </Dialog>
 
       {/* Category modal: list of valve names */}
       <Dialog open={!!active} onOpenChange={(open) => !open && onTypeChange(ALL_VALVES)}>
